@@ -3,9 +3,22 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:gravity="center"
-    android:padding="40dp"
+    android:paddingLeft="40dp"
+    android:paddingRight="40dp"
     android:orientation="vertical"
     >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -31,11 +44,13 @@
         android:layout_height="wrap_content"
         android:hint="Enter Email"
         >
+
         <EditText
             android:id="@+id/editTextTextEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#FDFAFA"
             android:ems="10"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -50,13 +65,15 @@
         android:layout_height="wrap_content"
         android:hint="Enter password"
         >
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FAF7F7"
+            android:ems="10"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,6 +87,11 @@
         android:background="@color/purple_700"
         android:text="LOGIN"
         android:textColor="@color/white" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+        </LinearLayout>
+    </ScrollView>
 
 
 
