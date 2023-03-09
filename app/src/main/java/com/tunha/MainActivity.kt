@@ -42,7 +42,13 @@ class MainActivity : AppCompatActivity() {
     fun checkValidation(){
         val emailEditText = findViewById<EditText>(R.id.email)
         val passwordEditText = findViewById<EditText>(R.id.password)
-        val loginButton = findViewById<Button>(R.id.login_button)
+        val loginButton = findViewById<Button>(R.id.login_button);
+
+        run {
+            emailEditText.setText("pats@gmail.com")
+            passwordEditText.setText("123")
+
+        }
 
         // Add click listener to login button
         loginButton.setOnClickListener {
@@ -71,6 +77,9 @@ class MainActivity : AppCompatActivity() {
                                 got=true
                                 if(us.login(password)) {
                                     Toast.makeText(applicationContext,"Login Successful: "+emailEditText.text.toString(),Toast.LENGTH_SHORT).show()
+                                    var intent=Intent(applicationContext,AdminAccount::class.java)
+                                    startActivity(intent)
+
                                 } else {
                                     Toast.makeText(applicationContext,"invalid Login : "+emailEditText.text.toString(),Toast.LENGTH_SHORT).show()
                                 }

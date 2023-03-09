@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_notifications">
+
+    <fragment
+        android:id="@+id/navigation_admins"
+        android:name="com.tunha.ui.admins.Admins"
+        android:label="Admins"
+        tools:layout="@layout/fragment_admins" />
+
+    <fragment
+        android:id="@+id/navigation_doctors"
+        android:name="com.tunha.ui.admins.Doctors"
+        android:label="Doctors"
+        tools:layout="@layout/fragment_doctors" />
+
+    <fragment
+        android:id="@+id/navigation_distributors"
+        android:name="com.tunha.ui.admins.Distributers"
+        android:label="Distributors"
+        tools:layout="@layout/fragment_distributers" />
+
+   <!-- <fragment
+        android:id="@+id/navigation_chemists"
+        android:name="com.tunha.ui.admins.Chemists"
+        android:label="Chemists"
+        tools:layout="@layout/fragment_chemists" />-->
+
+
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.tunha.ui.admins.Notifications"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.tunha.ui.admins.Profile"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
