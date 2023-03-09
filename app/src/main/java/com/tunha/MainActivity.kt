@@ -1,9 +1,11 @@
 package com.tunha
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -21,12 +23,18 @@ class MainActivity : AppCompatActivity() {
 
         FirebaseApp.initializeApp(this)
 
-        var adm=Admin("pats@gmail.com","Patrick G","123")
-        adm.setId("1")
-        adm.addToFirebase()
+//        var adm=Admin("pats@gmail.com","Patrick G","123")
+//        adm.setId("1")
+//        adm.addToFirebase()
 
 
         checkValidation();
+
+        var ca:Button=findViewById(R.id.create)
+        ca.setOnClickListener(View.OnClickListener {
+            var intent:Intent=Intent(this,CreateAccounts::class.java)
+            startActivity(intent)
+        })
 
 
     }
