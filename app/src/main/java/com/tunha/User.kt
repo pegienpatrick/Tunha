@@ -2,13 +2,26 @@ package com.tunha
 
 
 
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.transition.TransitionManager
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.target.CustomTarget
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import java.io.ByteArrayOutputStream
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 import java.util.*
+
+import com.bumptech.glide.request.transition.Transition as GlideTransition
 
 
 
@@ -121,6 +134,60 @@ open class User {
     fun setRawPassword(password:String){
         this.password=hashPassword(password)
     }
+
+    fun setProfileImage(context: Context, bitmap: Bitmap) {
+        val storageRef = FirebaseStorage.getInstance().reference
+        val imagesRef = storageRef.child("profileImage/user${this.getId()}.jpg")
+        val baos = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val data = baos.toByteArray()
+
+        val uploadTask = imagesRef.putBytes(data)
+        uploadTask.addOnSuccessListener {
+            imagesRef.downloadUrl.addOnSuccessListener { uri ->
+
+            }
+        }.addOnFailureListener {
+            Toast.makeText(context, "Failed to upload image", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun getProfileImage(context: Context, imageView: ImageView) {
+        val storageRef = FirebaseStorage.getInstance().reference
+        val imagesRef = storageRef.child("profileImage/user${this.getId()}.jpg")
+        imagesRef.downloadUrl.addOnSuccessListener { uri ->
+            Glide.with(context)
+                .load(uri)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(object : CustomTarget<Drawable>() {
+                    override fun onResourceReady(
+                        resource: Drawable,
+                        glideTransition: GlideTransition<in Drawable>?
+                    ) {
+                        imageView.setImageDrawable(resource)
+                        TransitionManager.beginDelayedTransition(imageView.parent as ViewGroup)
+                    }
+
+                    override fun onLoadCleared(placeholder: Drawable?) {
+                        // do nothing
+                    }
+                })
+        }.addOnFailureListener {
+            // if the user's profile image doesn't exist, load the default image from Firebase Storage
+            val defaultImageRef = storageRef.child("defaultprofile.jpg")
+            defaultImageRef.downloadUrl.addOnSuccessListener { uri ->
+                Glide.with(context)
+                    .load(uri)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(imageView)
+            }.addOnFailureListener {
+                Toast.makeText(context, "Failed to get image", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
+
 
 
 

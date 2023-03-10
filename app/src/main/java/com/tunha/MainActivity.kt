@@ -15,8 +15,10 @@ import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import com.tunha.Session.Companion.saveUserSession
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,6 +28,8 @@ class MainActivity : AppCompatActivity() {
 //        var adm=Admin("pats@gmail.com","Patrick G","123")
 //        adm.setId("1")
 //        adm.addToFirebase()
+
+
 
 
         checkValidation();
@@ -76,9 +80,18 @@ class MainActivity : AppCompatActivity() {
                             if(us.getEmail() == email){
                                 got=true
                                 if(us.login(password)) {
+                                    var s=Session()
+
+                                    saveUserSession(applicationContext,us.getId(),us.getUserType())
                                     Toast.makeText(applicationContext,"Login Successful: "+emailEditText.text.toString(),Toast.LENGTH_SHORT).show()
-                                    var intent=Intent(applicationContext,AdminAccount::class.java)
-                                    startActivity(intent)
+                                    if(us.getUserType() == "Admin") {
+                                        var intent =
+                                            Intent(applicationContext, AdminAccount::class.java)
+                                        startActivity(intent)
+                                    }
+                                    else{
+                                        Log.d(TAG,"User type : "+us.getUserType())
+                                    }
 
                                 } else {
                                     Toast.makeText(applicationContext,"invalid Login : "+emailEditText.text.toString(),Toast.LENGTH_SHORT).show()
