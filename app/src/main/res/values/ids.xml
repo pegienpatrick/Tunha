@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="create" type="id" />
+    <item name="navigation_doctors" type="id" />
+
 </resources>
