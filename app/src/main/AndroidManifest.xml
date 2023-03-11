@@ -25,6 +25,7 @@
             android:exported="false" />
         <activity
             android:name=".CreateAccountDoctor"
+            android:name=".AddAdmin"
             android:exported="false" />
         <activity
             android:name=".AdminAccount"
