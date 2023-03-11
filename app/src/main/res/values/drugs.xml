@@ -1,0 +1,9 @@
+<resources>
+    <string-array name="menu_options">
+        <item>Amoxicillin</item>
+        <item>Azithromycin:</item>
+        <item>Ciprofloxacin</item>
+        <item>Doxycycline:</item>
+        <item>Penicillin</item>
+    </string-array>
+</resources>
