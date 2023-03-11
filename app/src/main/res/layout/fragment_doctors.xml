@@ -65,6 +65,7 @@
             android:elevation="4dp"
             android:outlineProvider="background"
             android:background="#FAFAFA"
+            android:id="@+id/viewDetails"
             >
 
             <ImageView
