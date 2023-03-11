@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3ECEC"
+    android:background="#FDFBFB"
     android:gravity="center"
     android:orientation="vertical"
     android:paddingLeft="40dp"
@@ -26,7 +26,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="354dp"
                 android:layout_height="293dp"
-                app:srcCompat="@mipmap/img_5" />
+                app:srcCompat="@mipmap/img_6" />
 
             <Space
                 android:layout_width="match_parent"
@@ -36,14 +36,35 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="LOGIN"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:textColor="#3452BB"/>
+                android:text="ADD ADMIN"
+                android:textColor="@color/purple_700"
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Name"
+
+                >
+
+                <EditText
+                    android:id="@+id/fname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FDFAFA"
+                    android:ems="10"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -69,7 +90,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter password">
+                android:hint="Enter Start password">
 
                 <EditText
                     android:id="@+id/password"
@@ -87,12 +108,17 @@
                 android:layout_height="30dp" />
 
             <Button
-                android:id="@+id/login_button"
+                android:id="@+id/add_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/purple_700"
-                android:text="LOGIN"
+                android:text="ADD ADMIN"
                 android:textColor="@color/white" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
 
             <Space
                 android:layout_width="match_parent"
@@ -103,8 +129,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_border"
-                android:text="Create Account"
-                android:textColor="@color/purple_700" />
+                android:text="Cancel"
+                android:textColor="#F44336" />
 
             <Space
                 android:layout_width="match_parent"

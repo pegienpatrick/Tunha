@@ -2,9 +2,11 @@ package com.tunha
 
 
 
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
@@ -12,7 +14,7 @@ import androidx.transition.TransitionManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.target.CustomTarget
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -185,6 +187,50 @@ open class User {
             }
         }
     }
+
+
+    companion object {
+        @JvmStatic // Optional annotation to make the function callable from Java code
+        fun fetchUsersFromDatabase(task: (List<User>) -> Unit) {
+            val database = Firebase.database
+            val databaseRef: DatabaseReference = database.getReference("users")
+            databaseRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val userList = mutableListOf<User>()
+                    for (userSnapshot in dataSnapshot.children) {
+                        var us: User? = userSnapshot.getValue(User::class.java)
+                        if (us != null) {
+                            Log.d(TAG,"list gotten"+userSnapshot)
+                            userList.add(us)
+                        }
+                    }
+                    task(userList)
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Handle database error
+                }
+            })
+        }
+
+
+        fun fetchUserByIdFromDatabase(userId: String, task: (User?) -> Unit) {
+            val database = Firebase.database
+            val databaseRef: DatabaseReference = database.getReference("users")
+            databaseRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val us: User? = dataSnapshot.getValue(User::class.java)
+                    task(us)
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Handle database error
+                }
+            })
+        }
+
+    }
+    // Rest of the User class implementation
 
 
 

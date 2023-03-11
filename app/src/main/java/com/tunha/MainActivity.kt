@@ -10,10 +10,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.FirebaseApp
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.tunha.Session.Companion.saveUserSession
 
@@ -34,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         checkValidation();
 
-        var ca:Button=findViewById(R.id.create)
+        var ca:Button=findViewById(R.id.cancel)
         ca.setOnClickListener(View.OnClickListener {
             var intent:Intent=Intent(this,CreateAccounts::class.java)
             startActivity(intent)
@@ -64,8 +62,8 @@ class MainActivity : AppCompatActivity() {
             val myRef = database.getReference("users")
 
 // Query data where the "email" field is equal to "test@example.com"
-            val query = myRef.orderByChild("email")
-            query.addValueEventListener(object :
+            val query = myRef.orderByChild("email").equalTo(email)
+            query.addListenerForSingleValueEvent(object :
                 ValueEventListener {
                 
                 override fun onDataChange(dataSnapshot: DataSnapshot) {

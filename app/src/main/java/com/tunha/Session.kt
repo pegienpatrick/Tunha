@@ -9,6 +9,9 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 import java.util.concurrent.CompletableFuture
+import kotlin.coroutines.resume
+import kotlin.coroutines.suspendCoroutine
+
 
 class Session {
 
@@ -48,38 +51,30 @@ class Session {
             editor.apply()
         }
 
-        fun getUser(userId: String): User? {
+        suspend fun getUser(userId: String): User? = suspendCoroutine { continuation ->
             val database = Firebase.database
             val myRef = database.getReference("users")
 
             // Query data where the "userId" is equal to the given userId parameter
             val query = myRef.child(userId)
 
-            var user: User? = null
-            try {
-                query.addListenerForSingleValueEvent(object : ValueEventListener {
-                    override fun onDataChange(dataSnapshot: DataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            Log.d(TAG,"Gotten Data")
-                            user = dataSnapshot.getValue(User::class.java)
-
-                        }
-                        else
-                        {
-                            Log.d(TAG,"Not Gotten Data")
-                        }
+            query.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val user = if (dataSnapshot.exists()) {
+                        dataSnapshot.getValue(User::class.java)
+                    } else {
+                        null
                     }
+                    continuation.resume(user)
+                }
 
-                    override fun onCancelled(databaseError: DatabaseError) {
-                        Log.e(TAG, "Error getting user with id $userId: ${databaseError.message}")
-                    }
-                })
-            } catch (e: Exception) {
-                Log.e(TAG, "Error getting user with id $userId: ${e.message}")
-            }
-
-            return user
+                override fun onCancelled(databaseError: DatabaseError) {
+                    Log.e(TAG, "Error getting user with id $userId: ${databaseError.message}")
+                    continuation.resume(null)
+                }
+            })
         }
+
 
 
     }
