@@ -2,5 +2,8 @@
 <resources>
     <item name="create" type="id" />
     <item name="navigation_doctors" type="id" />
+    <item name="doctorLoginButton" type="id" />
+
+
 
 </resources>
