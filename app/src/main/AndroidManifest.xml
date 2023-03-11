@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Tunha"
         tools:targetApi="31">
         <activity
+            android:name=".doctorDetails"
+            android:exported="false" />
+        <activity
+            android:name=".chemistDetails"
+            android:exported="false" />
+        <activity
             android:name=".CreateAccountDistributor"
             android:exported="false" />
         <activity
