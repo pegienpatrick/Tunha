@@ -11,6 +11,7 @@
         android:orientation="horizontal"
         >
 
+
         <TextView
             android:id="@+id/approved"
             android:layout_width="0dp"
@@ -27,6 +28,7 @@
             android:gravity="center"
             android:text="Pending" />
 
+
     </LinearLayout>
 
     <LinearLayout
@@ -35,13 +37,14 @@
         android:orientation="horizontal"
         >
 
+
         <EditText
             android:id="@+id/sach"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-
             android:hint="Search" />
+
 
         <ImageView
             android:layout_width="wrap_content"
@@ -51,9 +54,6 @@
             android:padding="12dp"/>
 
     </LinearLayout>
-
-
-
 
 
     <ScrollView
@@ -71,6 +71,7 @@
 
         </LinearLayout>
     </ScrollView>
+
 
 
 </LinearLayout>

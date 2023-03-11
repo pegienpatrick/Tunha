@@ -1,5 +1,7 @@
 package com.tunha.ui.admins
 
+
+import android.content.Intent
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Intent
@@ -13,6 +15,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import com.tunha.R
+import com.tunha.chemistDetails
+import com.tunha.doctorDetails
 import android.widget.*
 import androidx.appcompat.widget.ThemeUtils.getThemeAttrColor
 import androidx.core.content.ContextCompat
@@ -22,6 +28,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.tunha.*
+
 
 class Doctors : Fragment() {
 
@@ -37,6 +44,16 @@ class Doctors : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val viewDetail = view.findViewById<LinearLayout>(R.id.viewDetails)
+
+        viewDetail.setOnClickListener {
+            val intent = Intent(activity, doctorDetails::class.java)
+            activity?.startActivity(intent)
+        }
+
+        return view
+
         // Inflate the fragment layout
         val rootView = inflater.inflate(R.layout.fragment_doctors, container, false)
 
@@ -78,6 +95,7 @@ class Doctors : Fragment() {
 
 
         return rootView
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

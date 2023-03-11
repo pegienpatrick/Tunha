@@ -1,5 +1,7 @@
 package com.tunha.ui.admins
 
+
+import android.content.Intent
 import android.content.ContentValues
 import android.content.Intent
 import android.graphics.Color
@@ -12,6 +14,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.LinearLayout
+import com.tunha.MainActivity
+import com.tunha.R
+import com.tunha.chemistDetails
 import android.widget.*
 import androidx.core.content.ContextCompat
 import com.google.firebase.database.DataSnapshot
@@ -20,6 +27,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.tunha.*
+
 
 class Distributers : Fragment() {
     private var showPending=false
@@ -34,6 +42,18 @@ class Distributers : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+//        return inflater.inflate(R.layout.fragment_distributers, container, false)
+
+      //  val view = inflater.inflate(R.layout.fragment_distributers, container, false)
+        val viewDetail = view.findViewById<LinearLayout>(R.id.viewDetails)
+
+        viewDetail.setOnClickListener {
+            val intent = Intent(activity, chemistDetails::class.java)
+            activity?.startActivity(intent)
+        }
+
+        
 
 // Inflate the fragment layout
         val rootView = inflater.inflate(R.layout.fragment_distributers, container, false)
@@ -76,12 +96,17 @@ class Distributers : Fragment() {
 
 
         return rootView
+
     }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(DistributersViewModel::class.java)
         // TODO: Use the ViewModel
+
+
+
     }
 
     fun feedData(view: View, sach: String){

@@ -11,11 +11,13 @@
     <item
         android:id="@+id/navigation_distributors"
         android:icon="@mipmap/img_2"
+
         android:title="Drug Sellers" />
   <!--  <item
         android:id="@+id/navigation_chemists"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Chemists" />-->
+
 
     <item
         android:id="@+id/navigation_doctors"
