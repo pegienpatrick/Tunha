@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_menu"
+    >
+
+
+    <item
+        android:id="@+id/navigation_prescriptions"
+        android:icon="@drawable/icons8_list_view_30"
+        android:title="Prescriptions" />
+
+    <item
+        android:id="@+id/navigation_prescribe"
+        android:icon="@drawable/icons8_dose_30"
+        android:title="Prescribe" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@mipmap/img_4"
+        android:title="Profile" />
+
+
+
+</menu>
