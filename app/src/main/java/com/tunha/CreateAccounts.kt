@@ -25,5 +25,15 @@ class CreateAccounts : AppCompatActivity() {
             startActivity(intent)
 
         })
+
+
+        var distributorLogin= findViewById<LinearLayout>(R.id.distributorLoginButton)
+        distributorLogin.setOnClickListener(View.OnClickListener {
+            var intent = Intent(this, CreateAccountDistributor::class.java)
+            startActivity(intent)
+
+        })
+
+
     }
 }
