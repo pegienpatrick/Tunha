@@ -1,7 +1,6 @@
 package com.tunha.ui.admins
 
 
-import android.content.Intent
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Intent
@@ -45,14 +44,7 @@ class Doctors : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val viewDetail = view.findViewById<LinearLayout>(R.id.viewDetails)
 
-        viewDetail.setOnClickListener {
-            val intent = Intent(activity, doctorDetails::class.java)
-            activity?.startActivity(intent)
-        }
-
-        return view
 
         // Inflate the fragment layout
         val rootView = inflater.inflate(R.layout.fragment_doctors, container, false)

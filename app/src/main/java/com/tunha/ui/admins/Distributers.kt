@@ -3,7 +3,6 @@ package com.tunha.ui.admins
 
 import android.content.Intent
 import android.content.ContentValues
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.lifecycle.ViewModelProvider
@@ -43,17 +42,7 @@ class Distributers : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-//        return inflater.inflate(R.layout.fragment_distributers, container, false)
 
-      //  val view = inflater.inflate(R.layout.fragment_distributers, container, false)
-        val viewDetail = view.findViewById<LinearLayout>(R.id.viewDetails)
-
-        viewDetail.setOnClickListener {
-            val intent = Intent(activity, chemistDetails::class.java)
-            activity?.startActivity(intent)
-        }
-
-        
 
 // Inflate the fragment layout
         val rootView = inflater.inflate(R.layout.fragment_distributers, container, false)
