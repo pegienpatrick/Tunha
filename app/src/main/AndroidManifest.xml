@@ -30,6 +30,7 @@
         <activity
             android:name=".CreateAccountDoctor"
             android:exported="false" />
+            />
         <activity
             android:name=".AddAdmin"
             android:exported="false" />

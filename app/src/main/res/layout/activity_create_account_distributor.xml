@@ -34,12 +34,12 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Name"
+        android:hint="Enter Business Name"
 
         >
 
         <EditText
-            android:id="@+id/drName"
+            android:id="@+id/fname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -61,7 +61,7 @@
 
 
         <EditText
-            android:id="@+id/inputText2"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FAF7F7"
@@ -82,7 +82,7 @@
 
 
         <EditText
-            android:id="@+id/inputText3"
+            android:id="@+id/licence"
             android:background="#FAF7F7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -123,6 +123,12 @@
         />
 
 
+    <TextView
+        android:id="@+id/selLicense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Image Selected" />
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="20dp" />
@@ -146,7 +152,6 @@
         android:text="BACK TO LOGIN"
         android:textColor="#3452BB"
         android:background="@drawable/button_border"/>
-
 
 
 </LinearLayout>

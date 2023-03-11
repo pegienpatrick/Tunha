@@ -34,7 +34,7 @@ open class User {
     private var userType:String
     private var id: String
 
-    constructor()
+    public constructor()
     {
         this.fullName = ""
         this.email = ""
@@ -139,7 +139,7 @@ open class User {
 
     fun setProfileImage(context: Context, bitmap: Bitmap) {
         val storageRef = FirebaseStorage.getInstance().reference
-        val imagesRef = storageRef.child("profileImage/user${this.getId()}.jpg")
+        val imagesRef = storageRef.child("profileImages/user${this.getId()}.jpg")
         val baos = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
         val data = baos.toByteArray()
@@ -156,7 +156,7 @@ open class User {
 
     fun getProfileImage(context: Context, imageView: ImageView) {
         val storageRef = FirebaseStorage.getInstance().reference
-        val imagesRef = storageRef.child("profileImage/user${this.getId()}.jpg")
+        val imagesRef = storageRef.child("profileImages/user${this.getId()}.jpg")
         imagesRef.downloadUrl.addOnSuccessListener { uri ->
             Glide.with(context)
                 .load(uri)
