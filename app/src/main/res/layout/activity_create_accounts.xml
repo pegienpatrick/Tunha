@@ -46,6 +46,7 @@
                 android:gravity="center"
                 android:background="#e9ecf0"
                 android:padding="20dp"
+                android:id="@+id/distributorLoginButton"
                 >
 
                 <ImageView
@@ -111,6 +112,9 @@
                 android:gravity="center"
                 android:background="#e9ecf0"
                 android:padding="20dp"
+                android:id="@+id/doctorLoginButton"
+
+
                 >
 
                 <ImageView

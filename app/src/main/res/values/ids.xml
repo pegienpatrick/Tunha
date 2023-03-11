@@ -2,6 +2,9 @@
 <resources>
     <item name="cancel" type="id" />
     <item name="navigation_doctors" type="id" />
+    <item name="doctorLoginButton" type="id" />
+
+
 
 
 </resources>
