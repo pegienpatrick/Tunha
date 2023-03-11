@@ -56,14 +56,15 @@
                     android:layout_weight="0.5"
                     android:paddingRight="50dp"
                     />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Pharmacist"
                     android:layout_weight="0.5"
+                    android:text="Drug Seller"
                     android:textColor="@color/purple_700"
 
-                    ></TextView>
+                    android:textStyle="bold"></TextView>
 
 
             </LinearLayout>
@@ -124,14 +125,15 @@
                     android:layout_weight="0.5"
                     android:paddingRight="50dp"
                     />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Doctor"
                     android:layout_weight="0.5"
+                    android:text="Doctor"
                     android:textColor="@color/purple_700"
 
-                    ></TextView>
+                    android:textStyle="bold"></TextView>
 
 
             </LinearLayout>
