@@ -19,6 +19,10 @@ class DrugSeller(email: String, fullName: String, password: String, licenceNumbe
     private var _licenceNumber: String = licenceNumber
     private var approved:Boolean=false
 
+    constructor() : this("", "", "", "", "") {
+        _licenceNumber = ""
+    }
+
     // Getter method for the licenceNumber property
     fun getLicenceNumber(): String {
         return _licenceNumber

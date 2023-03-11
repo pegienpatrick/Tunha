@@ -18,6 +18,9 @@ import java.util.*
 class Doctor(email: String, fullName: String, password: String,
              private var medicalPin: String, id: String = UUID.randomUUID().toString()) : User(email, fullName, password, "Doctor", id) {
 
+    constructor() : this("", "", "", "", "") {
+        medicalPin = ""
+    }
 
     private var approved:Boolean = false
 

@@ -34,7 +34,7 @@ open class User {
     private var userType:String
     private var id: String
 
-    constructor()
+    public constructor()
     {
         this.fullName = ""
         this.email = ""

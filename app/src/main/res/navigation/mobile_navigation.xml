@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/navigation_distributors"
         android:name="com.tunha.ui.admins.Distributers"
-        android:label="Distributors"
+        android:label="Drug Sellers"
         tools:layout="@layout/fragment_distributers" />
 
    <!-- <fragment
