@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:entries="@array/menu_options"
         android:padding="10dp"
+        android:background="@drawable/button_border"
         android:spinnerMode="dropdown" />
 
     <Space
@@ -45,27 +46,45 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/number1"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="number"
-            android:hint="Dose"/>
+            android:hint="Dose"
+            >
+            <EditText
+                android:id="@+id/dose"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:background="#FAF7F7"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="x"/>
+            android:text="X"/>
 
-        <EditText
-            android:id="@+id/number2"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="number"
-            android:hint="Times"/>
+            android:hint="Dose"
+            >
+            <EditText
+                android:id="@+id/times"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:background="#FAF7F7"
+                />
 
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
 
@@ -77,8 +96,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="PRESCRIBE"
-        android:backgroundColor = "#3452BB"
-
+        android:background="#3452BB"
+        android:textColor="#ffffff"
       >
 
     </Button>
