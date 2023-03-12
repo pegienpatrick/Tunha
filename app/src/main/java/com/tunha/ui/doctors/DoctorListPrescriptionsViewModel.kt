@@ -1,4 +1,4 @@
-package com.tunha
+package com.tunha.ui.doctors
 
 import androidx.lifecycle.ViewModel
 

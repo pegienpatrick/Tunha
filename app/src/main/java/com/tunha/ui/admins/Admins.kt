@@ -96,6 +96,7 @@ class Admins : Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 Log.d(TAG, "onDataChange: ")
                 parentLinearLayout.removeAllViews()
+
                 for (childSnapshot in dataSnapshot.children.reversed()) {
                     Log.d(TAG, "reading dta")
                     // Print the data for each child node

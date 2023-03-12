@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_doctors"
+    app:startDestination="@id/profile">
+
+
+    <fragment
+        android:id="@+id/doctorListPrescriptions"
+        android:name="com.tunha.ui.doctors.doctorListPrescriptions"
+        android:label="doctorListPrescriptions"
+        tools:layout="@layout/fragment_doctor_list_prescriptions"
+        />
+
+    <fragment
+        android:id="@+id/doctorAddPrescription"
+        android:name="com.tunha.ui.doctors.doctorAddPrescription"
+        android:label="doctorAddPrescription"
+        tools:layout="@layout/fragment_doctor_add_prescription"
+
+        />
+
+    <fragment
+        android:id="@+id/notifications"
+        android:name="com.tunha.ui.doctors.Notifications"
+        android:label="fragment_notifications_doctors"
+        tools:layout="@layout/fragment_notifications_doctors" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.tunha.ui.doctors.Profile"
+        android:label="fragment_profile_doctors"
+        tools:layout="@layout/fragment_profile_doctors" />
+</navigation>
