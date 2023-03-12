@@ -19,6 +19,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.tunha.Session.Companion.saveUserSession
+import com.tunha.ui.doctors.DoctorAccount
 
 class CreateAccountDoctor : AppCompatActivity() {
     private val PICK_IMAGE_REQUEST = 1
@@ -110,6 +112,10 @@ class CreateAccountDoctor : AppCompatActivity() {
                         user.addToFirebase()
                         user.setCertImage(applicationContext, cert!!)
                         //finish()
+                        saveUserSession(applicationContext,user.getId(),user.getUserType())
+                        var intent =
+                                            Intent(applicationContext, DoctorAccount::class.java)
+                                        startActivity(intent)
                         Log.d(ContentValues.TAG,"Expected Data Here ")
                     }
                 }
