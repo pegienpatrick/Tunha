@@ -6,11 +6,11 @@
 
     <item
         android:id="@+id/navigation_admins"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/icons8_user_menu"
         android:title="Admins" />
     <item
         android:id="@+id/navigation_distributors"
-        android:icon="@mipmap/img_2"
+        android:icon="@drawable/icons8_in_transit"
 
         android:title="Drug Sellers" />
   <!--  <item
@@ -21,7 +21,7 @@
 
     <item
         android:id="@+id/navigation_doctors"
-        android:icon="@mipmap/img_1"
+        android:icon="@drawable/icons8_stethoscope_30"
         android:title="Doctors" />
 
     <item
