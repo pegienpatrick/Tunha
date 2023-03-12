@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Tunha"
         tools:targetApi="31">
         <activity
+            android:name=".DistributorAddStock"
+            android:exported="false" />
+        <activity
+            android:name=".AddStock"
+            android:exported="false" />
+        <activity
             android:name=".doctor"
             android:exported="false"
             android:label="@string/title_activity_doctor" />
@@ -30,7 +36,6 @@
         <activity
             android:name=".CreateAccountDoctor"
             android:exported="false" />
-            />
         <activity
             android:name=".AddAdmin"
             android:exported="false" />
