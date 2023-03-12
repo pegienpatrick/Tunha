@@ -1,4 +1,4 @@
-package com.tunha
+package com.tunha.ui.doctors
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.Spinner
+import com.tunha.R
 
 class doctorAddPrescription : Fragment() {
 

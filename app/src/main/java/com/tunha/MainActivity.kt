@@ -14,6 +14,7 @@ import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.tunha.Session.Companion.saveUserSession
+import com.tunha.ui.doctors.DoctorAccount
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,7 +48,10 @@ class MainActivity : AppCompatActivity() {
         val loginButton = findViewById<Button>(R.id.login_button);
 
         run {
-            emailEditText.setText("pats@gmail.com")
+            // emailEditText.setText("pats@gmail.com")
+            // passwordEditText.setText("123")
+
+            emailEditText.setText("patom@gmail.com")
             passwordEditText.setText("123")
 
         }
@@ -85,6 +89,11 @@ class MainActivity : AppCompatActivity() {
                                     if(us.getUserType() == "Admin") {
                                         var intent =
                                             Intent(applicationContext, AdminAccount::class.java)
+                                        startActivity(intent)
+                                    }
+                                    else if(us.getUserType() == "Doctor") {
+                                        var intent =
+                                            Intent(applicationContext, DoctorAccount::class.java)
                                         startActivity(intent)
                                     }
                                     else{

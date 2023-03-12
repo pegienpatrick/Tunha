@@ -1,7 +1,7 @@
-package com.tunha
+package com.tunha.ui.doctors
 
 import androidx.lifecycle.ViewModel
 
-class DoctorAddPrescriptionViewModel : ViewModel() {
+class ProfileViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

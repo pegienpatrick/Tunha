@@ -4,6 +4,8 @@
     <item name="navigation_doctors" type="id" />
     <item name="doctorLoginButton" type="id" />
     <item name="change_profile_picture" type="id"/>
+    <item name="navigation_prescriptions" type="id"/>
+    <item name="navigation_prescribe" type="id"/>
 
 
 </resources>
