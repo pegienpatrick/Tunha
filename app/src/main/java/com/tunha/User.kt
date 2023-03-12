@@ -216,18 +216,42 @@ open class User {
 
         fun fetchUserByIdFromDatabase(userId: String, task: (User?) -> Unit) {
             val database = Firebase.database
-            val databaseRef: DatabaseReference = database.getReference("users")
+            val databaseRef: DatabaseReference = database.getReference("users").child(userId)
             databaseRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    val us: User? = dataSnapshot.getValue(User::class.java)
-                    task(us)
+                    val user: User? = dataSnapshot.getValue(User::class.java)
+                    if (user != null) {
+                        val userType = user.getUserType()
+                        when (userType) {
+                            "Admin" -> {
+                                val admin: Admin? = dataSnapshot.getValue(Admin::class.java)
+                                task(admin)
+                            }
+                            "Doctor" -> {
+                                val doctor: Doctor? = dataSnapshot.getValue(Doctor::class.java)
+                                task(doctor)
+                            }
+                            "DrugSeller" -> {
+                                val drugSeller: DrugSeller? = dataSnapshot.getValue(DrugSeller::class.java)
+                                task(drugSeller)
+                            }
+                            else -> {
+                                // Handle unknown user type
+                                task(null)
+                            }
+                        }
+                    } else {
+                        task(null)
+                    }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
                     // Handle database error
+                    task(null)
                 }
             })
         }
+
 
     }
     // Rest of the User class implementation

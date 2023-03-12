@@ -253,6 +253,12 @@ class Distributers : Fragment() {
 
         parentLinearLayout.addView(childLinearLayout)
 
+        parentLinearLayout.setOnClickListener(View.OnClickListener {
+            var intent:Intent=android.content.Intent(context,DrugSellerDetails::class.java)
+            intent.putExtra("userId",user.getId())
+            startActivity(intent)
+        })
+
         return parentLinearLayout
 
     }
