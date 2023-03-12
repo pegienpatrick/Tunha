@@ -1,26 +1,20 @@
 package com.tunha.ui.admins
 
 
-import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import com.tunha.R
-import com.tunha.chemistDetails
-import com.tunha.doctorDetails
 import android.widget.*
-import androidx.appcompat.widget.ThemeUtils.getThemeAttrColor
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -250,6 +244,12 @@ class Doctors : Fragment() {
         childLinearLayout.addView(textLinearLayout)
 
         parentLinearLayout.addView(childLinearLayout)
+
+        parentLinearLayout.setOnClickListener(View.OnClickListener {
+            var intent:Intent=android.content.Intent(context,doctorDetails::class.java)
+            intent.putExtra("userId",user.getId())
+            startActivity(intent)
+        })
 
         return parentLinearLayout
 

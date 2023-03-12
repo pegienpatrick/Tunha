@@ -8,13 +8,11 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import com.tunha.User.Companion.fetchUserByIdFromDatabase
 
-class doctorDetails : AppCompatActivity() {
+class DrugSellerDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_doctor_details)
-
+        setContentView(R.layout.activity_drug_seller_details)
         val backButton = findViewById<ImageView>(R.id.backbutton)
         backButton.setOnClickListener {
             finish()
@@ -43,48 +41,46 @@ class doctorDetails : AppCompatActivity() {
     fun feedData(userid:String){
 
 
-        val doctorImageView: ImageView = findViewById(R.id.dp)
+        val dImageView: ImageView = findViewById(R.id.dp)
         val firstNameTextView: TextView = findViewById(R.id.fname)
         val emailTextView: TextView = findViewById(R.id.email)
-        val medicalPinTextView: TextView = findViewById(R.id.medpin)
+        val licenseTextView: TextView = findViewById(R.id.licence)
         val statusTextView: TextView = findViewById(R.id.status)
-        val doctorCertificateImageView: ImageView = findViewById(R.id.cert)
+        val licenseImageView: ImageView = findViewById(R.id.selLicense)
         val approveButton: Button = findViewById(R.id.action_button)
 
         val paddingValue=20
         firstNameTextView.setPadding(paddingValue, paddingValue, paddingValue, paddingValue)
         emailTextView.setPadding(paddingValue, paddingValue, paddingValue, paddingValue)
-        medicalPinTextView.setPadding(paddingValue, paddingValue, paddingValue, paddingValue)
+        licenseTextView.setPadding(paddingValue, paddingValue, paddingValue, paddingValue)
         statusTextView.setPadding(paddingValue, paddingValue, paddingValue, paddingValue)
 
-        fetchUserByIdFromDatabase(userid) { res ->
+        User.fetchUserByIdFromDatabase(userid) { res ->
 
             if (res != null) {
-                var user=res as Doctor
-                firstNameTextView.text=user.getFullName()
-                emailTextView.text=user.getEmail()
-                medicalPinTextView.text=user.getMedicalPin()
+                var user = res as DrugSeller
+                firstNameTextView.text = user.getFullName()
+                emailTextView.text = user.getEmail()
+                licenseTextView.text = user.getLicenceNumber()
                 statusTextView.text = if (user.isApproved()) "Approved" else "Not Approved"
 
-                user.getProfileImage(applicationContext,doctorImageView)
-                user.getCertImage(applicationContext,doctorCertificateImageView)
+                user.getProfileImage(applicationContext, dImageView)
+                user.getLicenseImage(applicationContext, licenseImageView)
 
-                if(user.isApproved())
-                {
-                    approveButton.text=("DisApprove");
+                if (user.isApproved()) {
+                    approveButton.text = ("DisApprove");
                     approveButton.setBackgroundColor(Color.RED)
-                }
-                else{
-                    approveButton.text=("Approve");
+                } else {
+                    approveButton.text = ("Approve");
                     approveButton.setBackgroundColor(Color.BLUE)
                 }
 
                 approveButton.setOnClickListener(View.OnClickListener {
 
                     val message = if (user.isApproved()) {
-                        "Are you sure you want to disapprove this Doctor?"
+                        "Are you sure you want to disapprove this Drug Seller ?"
                     } else {
-                        "Are you sure you want to approve this Doctor?"
+                        "Are you sure you want to approve this Drug Seller?"
                     }
                     val alertDialogBuilder = AlertDialog.Builder(this)
                     alertDialogBuilder.setTitle("Confirm")

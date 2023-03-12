@@ -52,16 +52,16 @@
                     android:gravity="center"
                     >
                     <TextView
-                        android:text="Doctor Name"
+                        android:text="Business Name"
                         />
                     <TextView
-                    android:id="@+id/fname"
+                        android:id="@+id/fname"
                         />
                 </TableRow>
                 <TableRow
                     android:gravity="center">
                     <TextView
-                        android:text="Doctor Email"
+                        android:text="Business Email"
                         />
                     <TextView
                         android:id="@+id/email"
@@ -70,10 +70,10 @@
                 <TableRow
                     android:gravity="center">
                     <TextView
-                        android:text="Medical Pin"
+                        android:text="License Number"
                         />
                     <TextView
-                        android:id="@+id/medpin"
+                        android:id="@+id/licence"
                         />
                 </TableRow>
                 <TableRow
@@ -93,7 +93,7 @@
 
             <ImageView
 
-                android:id="@+id/cert"
+                android:id="@+id/selLicense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/image_border"
@@ -115,7 +115,7 @@
                 android:id="@+id/action_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="APPROVE DOCTOR"
+                android:text="APPROVE Business"
 
                 android:textColor="#ffffff"
                 />

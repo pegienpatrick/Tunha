@@ -3,8 +3,7 @@
     <item name="cancel" type="id" />
     <item name="navigation_doctors" type="id" />
     <item name="doctorLoginButton" type="id" />
-
-
+    <item name="change_profile_picture" type="id"/>
 
 
 </resources>
