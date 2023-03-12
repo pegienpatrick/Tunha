@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Tunha"
         tools:targetApi="31">
         <activity
+            android:name=".doctorViewAfterPrescribe"
+            android:exported="false" />
+        <activity
             android:name=".DrugSellerDetails"
             android:exported="false" />
         <activity
