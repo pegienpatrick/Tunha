@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/nav_menu"
+    android:id="@+id/nav_menu_drugsellers"
     >
 
 
     <item
-        android:id="@+id/navigation_prescriptions"
+        android:id="@+id/navigation_stock"
         android:icon="@drawable/icons8_list_view_30"
-        android:title="Prescriptions" />
+        android:title="My Stock" />
 
     <item
-        android:id="@+id/navigation_prescribe"
+        android:id="@+id/navigation_sell"
+        android:icon="@drawable/heavy_box_amico"
+        android:title="sell WholeSale" />
+
+    <item
+        android:id="@+id/navigation_sell_prescription"
         android:icon="@drawable/icons8_dose_30"
-        android:title="Prescribe" />
+        android:title="sell Prescribe" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_notifications_drugsellers"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_notifications" />
 
     <item
-        android:id="@+id/navigation_profile"
+        android:id="@+id/navigation_profile_drugsellers"
         android:icon="@mipmap/img_4"
         android:title="Profile" />
 

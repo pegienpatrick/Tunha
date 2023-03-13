@@ -18,6 +18,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.tunha.Session.Companion.saveUserSession
+import com.tunha.ui.distributors.DrugSellerAccount
 
 class CreateAccountDistributor : AppCompatActivity() {
     private val PICK_IMAGE_REQUEST = 1
@@ -117,6 +119,10 @@ class CreateAccountDistributor : AppCompatActivity() {
                         user.addToFirebase()
                         user.setLicenseImage(applicationContext, license!!)
                         //finish()
+                        saveUserSession(applicationContext,user.getId(),user.getUserType())
+                        var intent =
+                                            Intent(applicationContext, DrugSellerAccount::class.java)
+                                        startActivity(intent)
                         Log.d(ContentValues.TAG,"Expected Data Here ")
                     }
                 }

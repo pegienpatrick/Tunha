@@ -16,12 +16,12 @@
         android:title="Prescribe" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_notifications_doctors"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_notifications" />
 
     <item
-        android:id="@+id/navigation_profile"
+        android:id="@+id/navigation_profile_doctors"
         android:icon="@mipmap/img_4"
         android:title="Profile" />
 

@@ -14,6 +14,7 @@ import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.tunha.Session.Companion.saveUserSession
+import com.tunha.ui.distributors.DrugSellerAccount
 import com.tunha.ui.doctors.DoctorAccount
 
 class MainActivity : AppCompatActivity() {
@@ -94,6 +95,11 @@ class MainActivity : AppCompatActivity() {
                                     else if(us.getUserType() == "Doctor") {
                                         var intent =
                                             Intent(applicationContext, DoctorAccount::class.java)
+                                        startActivity(intent)
+                                    }
+                                    else if(us.getUserType() == "DrugSeller") {
+                                        var intent =
+                                            Intent(applicationContext, DrugSellerAccount::class.java)
                                         startActivity(intent)
                                     }
                                     else{

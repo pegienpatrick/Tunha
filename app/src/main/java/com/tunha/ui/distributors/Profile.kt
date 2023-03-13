@@ -1,4 +1,4 @@
-package com.tunha.ui.doctors
+package com.tunha.ui.distributors
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent

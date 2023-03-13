@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/mobile_navigation_drugsellers">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_drugsellers"
+    app:startDestination="@id/distributorStockManagement">
 
+    <fragment
+        android:id="@+id/chemist_fulfil_prescription"
+        android:name="com.tunha.ui.distributors.chemist_fulfil_prescription"
+        android:label="Sell To Prescription"
+        tools:layout="@layout/fragment_chemist_fulfil_prescription"
+        />
+    <fragment
+        android:id="@+id/fragmentChemistWholesale"
+        android:name="com.tunha.ui.distributors.fragmentChemistWholesale"
+        android:label="sell Wholesale"
+        tools:layout="@layout/fragment_fragment_chemist_wholesale"
+        />
+    <fragment
+        android:id="@+id/distributorStockManagement"
+        android:name="com.tunha.ui.distributors.distributorStockManagement"
+        android:label="My Stock"
+        tools:layout="@layout/fragment_distributor_stock_management"
+        />
+    <fragment
+        android:id="@+id/notifications_drugsellers"
+        android:name="com.tunha.ui.distributors.Notifications"
+        android:label="notifications"
+        tools:layout="@layout/fragment_notifications_drugsellers" />
+    <fragment
+        android:id="@+id/profile_drug_sellers"
+        android:name="com.tunha.ui.distributors.Profile"
+        android:label="profile"
+        tools:layout="@layout/fragment_profile_drugsellers" />
 </navigation>

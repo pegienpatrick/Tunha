@@ -6,6 +6,8 @@
     <item name="change_profile_picture" type="id"/>
     <item name="navigation_prescriptions" type="id"/>
     <item name="navigation_prescribe" type="id"/>
+    <item name="buttonSubmit4" type="id"/>
+    <item name="buttonsubmit4" type="id">buttonsubmit4</item>
 
 
 </resources>
