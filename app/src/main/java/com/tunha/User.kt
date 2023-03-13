@@ -2,6 +2,7 @@ package com.tunha
 
 
 
+import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.graphics.Bitmap
@@ -158,6 +159,7 @@ open class User {
         val storageRef = FirebaseStorage.getInstance().reference
         val imagesRef = storageRef.child("profileImages/user${this.getId()}.jpg")
         imagesRef.downloadUrl.addOnSuccessListener { uri ->
+        if((context is Activity) && !context.isFinishing)
             Glide.with(context)
                 .load(uri)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)

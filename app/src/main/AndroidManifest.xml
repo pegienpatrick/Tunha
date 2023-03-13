@@ -18,18 +18,20 @@
             android:name=".ui.doctors.DoctorAccount"
             android:exported="false" />
         <activity
+            android:name=".ui.distributors.DrugSellerAccount"
+            android:exported="false" />
+        <activity
             android:name=".DrugSellerDetails"
             android:exported="false" />
         <activity
             android:name=".DistributorAddStock"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".AddStock"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".doctor"-->
-<!--            android:exported="false"-->
-<!--            android:label="@string/title_activity_doctor" />-->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".AddStock" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".doctor" -->
+        <!-- android:exported="false" -->
+        <!-- android:label="@string/title_activity_doctor" /> -->
         <activity
             android:name=".doctorDetails"
             android:exported="false" />

@@ -3,32 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation_doctors"
-    app:startDestination="@id/profile">
+    app:startDestination="@id/profile_doctors">
 
 
     <fragment
         android:id="@+id/doctorListPrescriptions"
         android:name="com.tunha.ui.doctors.doctorListPrescriptions"
-        android:label="doctorListPrescriptions"
+        android:label="Recent Prescriptions"
         tools:layout="@layout/fragment_doctor_list_prescriptions"
         />
 
     <fragment
         android:id="@+id/doctorAddPrescription"
         android:name="com.tunha.ui.doctors.doctorAddPrescription"
-        android:label="doctorAddPrescription"
-        tools:layout="@layout/fragment_doctor_add_prescription"
+        android:label="Add Prescription"
+        tools:layout="@layout/fragment_doctor_add_prescriptions"
 
         />
 
     <fragment
-        android:id="@+id/notifications"
+        android:id="@+id/notifications_doctors"
         android:name="com.tunha.ui.doctors.Notifications"
-        android:label="fragment_notifications_doctors"
+        android:label="Notifications"
         tools:layout="@layout/fragment_notifications_doctors" />
     <fragment
-        android:id="@+id/profile"
+        android:id="@+id/profile_doctors"
         android:name="com.tunha.ui.doctors.Profile"
-        android:label="fragment_profile_doctors"
+        android:label="profile"
         tools:layout="@layout/fragment_profile_doctors" />
 </navigation>

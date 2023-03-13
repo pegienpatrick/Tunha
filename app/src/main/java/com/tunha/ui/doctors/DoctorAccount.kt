@@ -14,6 +14,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.FirebaseApp
+import com.tunha.Doctor
 import com.tunha.R
 import com.tunha.Session
 import com.tunha.User
@@ -33,6 +34,13 @@ class DoctorAccount : AppCompatActivity() {
         var ids:String= Session.getUserSession(this).first.toString()
         Log.d(TAG,"User was $ids")
 
+        User.fetchUserByIdFromDatabase(ids){
+            user ->
+            var doc=user as Doctor
+            if(doc.isApproved())
+            {
+
+
 
 
 
@@ -46,16 +54,53 @@ class DoctorAccount : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_doctor_account)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        navView.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.navigation_prescriptions -> {
+                    navController.navigate(R.id.doctorListPrescriptions)
+                    true
+                }
+                R.id.navigation_prescribe -> {
+                    navController.navigate(R.id.doctorAddPrescription)
+                    true
+                }
+                R.id.navigation_notifications_doctors -> {
+                    navController.navigate(R.id.notifications_doctors)
+                    true
+                }
+                R.id.navigation_profile_doctors -> {
+                    navController.navigate(R.id.profile_doctors)
+                    true
+                }
+                else -> false
+            }
+        }
+
+// Set the selected menu item to the first item in the menu
+        navView.selectedItemId = R.id.navigation_prescriptions
+
+        
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_prescribe,
-                R.id.navigation_prescriptions
+                R.id.doctorListPrescriptions,
+                R.id.doctorAddPrescription,
+                R.id.notifications_doctors,
+                R.id.profile_doctors
 
             )
 
         )
+
+
+
         setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        //navView.setupWithNavController(navController)
+            }
+            else
+            {
+                setContentView(R.layout.notapproved)
+            }
+        }
 
     val context=this
 
