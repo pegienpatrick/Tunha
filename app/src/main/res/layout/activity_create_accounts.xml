@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Who are you ?"
-                android:textColor="@color/purple_700"
+                android:textColor="#3452BB"
 
                 android:textSize="22dp"
                 android:textStyle="bold" />
@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:text="Drug Seller"
-                    android:textColor="@color/purple_700"
+                    android:textColor="#3452BB"
 
                     android:textStyle="bold"></TextView>
 
@@ -131,7 +131,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:text="Doctor"
-                    android:textColor="@color/purple_700"
+                    android:textColor="#3452BB"
 
                     android:textStyle="bold"></TextView>
 
@@ -147,7 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="BACK TO LOGIN"
-                android:background="@color/purple_700"
+                android:background="#3452BB"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:id="@+id/login"

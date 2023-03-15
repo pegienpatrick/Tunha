@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ADD ADMIN"
-                android:textColor="@color/purple_700"
+                android:textColor="#3452BB"
                 android:textStyle="bold" />
 
             <Space
@@ -111,7 +111,7 @@
                 android:id="@+id/add_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/purple_700"
+                android:background="#3452BB"
                 android:text="ADD ADMIN"
                 android:textColor="@color/white" />
 
