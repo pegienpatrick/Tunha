@@ -2,6 +2,7 @@ package com.tunha.ui.doctors
 
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Color
 import android.graphics.Color.*
 import android.os.Bundle
@@ -19,6 +20,8 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.tunha.*
+import java.util.Arrays.copyOf
+import java.util.Collections.copy
 
 
 class doctorAddPrescription : Fragment() {
@@ -64,7 +67,9 @@ class doctorAddPrescription : Fragment() {
         val parent=view.findViewById<LinearLayout>(R.id.holdData)
         val inflater = LayoutInflater.from(context)
         val presdraftLayout = inflater.inflate(R.layout.presdraft, parent, false)
-        parent.addView(presdraftLayout)
+        val indi=presdraftLayout.findViewById<LinearLayout>(R.id.indi)
+        val cindi= cloneLinearLayout(indi)
+        parent.addView(cindi)
 
         //parent.addView(R.layout.presdraft)
     //     val fieldsDrugname=listOf<TextView>()
@@ -290,3 +295,47 @@ class doctorAddPrescription : Fragment() {
 
 
 }
+
+fun cloneLinearLayout(linearLayout: LinearLayout): LinearLayout {
+    val newLinearLayout = LinearLayout(linearLayout.context)
+    newLinearLayout.layoutParams = linearLayout.layoutParams
+    newLinearLayout.orientation = linearLayout.orientation
+    newLinearLayout.gravity = linearLayout.gravity
+    newLinearLayout.background = linearLayout.background
+    newLinearLayout.setPadding(
+        linearLayout.paddingLeft, linearLayout.paddingTop,
+        linearLayout.paddingRight, linearLayout.paddingBottom
+    )
+
+    for (i in 0 until linearLayout.childCount) {
+        val childView = linearLayout.getChildAt(i)
+        val newChildView = cloneView(childView)
+        newLinearLayout.addView(newChildView)
+    }
+
+    return newLinearLayout
+}
+
+@Suppress("UNCHECKED_CAST")
+fun <T : View> cloneView(view: T): T {
+    val clonedView = view.javaClass.constructors[0].newInstance(view.context) as T
+    clonedView.layoutParams = view.layoutParams
+    clonedView.id = view.id
+
+    if (view is TextView && clonedView is TextView) {
+        clonedView.text = view.text
+        clonedView.gravity = view.gravity
+        clonedView.textSize = view.textSize
+        clonedView.setTextColor(view.currentTextColor)
+        clonedView.setTypeface(view.typeface)
+    }
+
+    if (view is ImageView && clonedView is ImageView) {
+        clonedView.setImageDrawable(view.drawable)
+    }
+
+    return clonedView
+}
+
+
+
