@@ -7,7 +7,7 @@
     <item name="navigation_prescriptions" type="id"/>
     <item name="navigation_prescribe" type="id"/>
     <item name="buttonSubmit4" type="id"/>
-    <item name="buttonsubmit4" type="id">buttonsubmit4</item>
+    <item name="buttonsubmit4" type="id"/>
 
 
 </resources>
