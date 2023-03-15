@@ -89,7 +89,7 @@
                 android:id="@+id/login_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/purple_700"
+                android:background="#3452BB"
                 android:text="LOGIN"
                 android:textColor="@color/white" />
 
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_border"
                 android:text="Create Account"
-                android:textColor="@color/purple_700" />
+                android:textColor="#3452BB" />
 
             <Space
                 android:layout_width="match_parent"
