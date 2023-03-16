@@ -10,20 +10,21 @@ import com.google.firebase.ktx.Firebase
 class Prescription(
     val name: String,
     val doctor: String,
-    var uniqueId: Int? = null,
     val gender: String,
-    val age: Int,
-    private val drugs: MutableList<DrugPrescription> = mutableListOf()
+    val age: Int
 ) {
-    constructor(): this("", "", null, "", 0)
+    private var drugs: MutableList<DrugPrescription> = mutableListOf()
+    private var uniqueId: Int? = null
+    private var fulfilledBy=""
+    constructor(): this("", "", "", 0)
 
-    init {
-        if (uniqueId == null) {
-            uniqueId = generateUniqueId()
-        }
-    }
+//    init {
+//        if (uniqueId == null) {
+//            uniqueId = generateUniqueId()
+//        }
+//    }
 
-    private fun generateUniqueId(): Int {
+    public fun generateUniqueId(task: (Int?) -> Unit): Int {
         val database = Firebase.database
         val idRef = database.getReference("uniqueIdCounter")
 
@@ -36,6 +37,8 @@ class Prescription(
                 id++
                 uniqueId=id;
                 idRef.setValue(id)
+                addToFirebase()
+                task(id)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -53,6 +56,7 @@ class Prescription(
 
 
     fun addToFirebase() {
+
         val database = Firebase.database
         val myRef: DatabaseReference = database.getReference("prescriptions")
 
@@ -66,6 +70,26 @@ class Prescription(
     fun getDrugs(): MutableList<DrugPrescription> {
         return drugs
     }
+
+    fun getUniqueId(): Int? {
+        return uniqueId
+    }
+
+    fun getFulfilledBy(): String {
+        return fulfilledBy
+    }
+
+    fun setUniqueId(id: Int) {
+        uniqueId = id
+    }
+
+    fun setFulfilledBy(fulfilledBy: String) {
+        this.fulfilledBy = fulfilledBy
+    }
+
+
+
+
 }
 
 

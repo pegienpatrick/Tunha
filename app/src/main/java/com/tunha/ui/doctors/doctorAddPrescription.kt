@@ -5,15 +5,20 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Color.*
+import android.graphics.Typeface
+import android.opengl.Visibility
 import android.os.Bundle
 import android.text.InputType
+import android.util.TypedValue
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.database.DatabaseReference
@@ -81,6 +86,146 @@ class doctorAddPrescription : Fragment() {
         )
 
        lin.removeAllViews()
+        var indicounter=-1
+
+
+        val adder=view.findViewById<Button>(R.id.adddrug)
+
+        val drugArray: Array<Array<View>> = Array(7) { i ->
+            val packageName=requireContext().packageName
+            arrayOf(
+                indiList[i].findViewById(resources.getIdentifier("drugname${i+1}", "id", packageName)),
+                indiList[i].findViewById(resources.getIdentifier("drugnamedosage${i+1}", "id", packageName)),
+                indiList[i].findViewById(resources.getIdentifier("drugtimes${i+1}", "id", packageName)),
+                indiList[i].findViewById(resources.getIdentifier("drugnametotalnumber${i+1}", "id", packageName))
+            )
+        }
+
+        for(i in 0..6)
+        {
+            (drugArray[i][0] as Spinner).setSelection(-1)
+        }
+
+
+
+
+        adder.setOnClickListener(View.OnClickListener {
+            if(indicounter<6)
+            {
+                indicounter++;
+                parent.addView(indiList[indicounter])
+
+                var s=Space(context)
+                    s.layoutParams=LinearLayout.LayoutParams(20,30)
+                parent.addView(s)
+            }
+            else
+            {
+                adder.visibility=View.INVISIBLE
+            }
+
+        })
+
+        val snd=view.findViewById<Button>(R.id.buttonsubmit4)
+            snd.setOnClickListener(View.OnClickListener {
+
+                if(indicounter>-1)
+                {
+                    //val genderSpinner: Spinner = view.findViewById(R.id.gender_spinner)
+                    val patientNameEditText: EditText = view.findViewById(R.id.patientname)
+                    val genderSpinner: Spinner = view.findViewById(R.id.gender_spinner)
+                    val ageEditText: EditText = view.findViewById(R.id.age)
+                    var ids=""
+                    ids= context?.let { it1 -> Session.getUserSession(it1).first.toString() }.toString()
+
+                    var p:Prescription=Prescription(patientNameEditText.text.toString(),ids,genderSpinner.selectedItem.toString(),ageEditText.text.toString().toInt())
+
+                    for(i in 0..indicounter)
+                    {
+                        if((drugArray[i][3] as EditText).text.toString().toInt()>0)
+                        {
+                            var d=DrugPrescription((drugArray[i][0] as Spinner).selectedItem.toString(),(drugArray[i][1] as EditText).text.toString().toInt(),(drugArray[i][2] as EditText).text.toString().toInt(),(drugArray[i][3] as EditText).text.toString().toInt()  )
+                            p.addDrug(d)
+
+                        }
+                    }
+
+                    //p.addToFirebase()
+                    var rec:Int=-1
+                    p.generateUniqueId {id->
+                       if (id != null) {
+                           rec=id
+                           // remove all views from the linear layout
+                           // get a reference to the parent LinearLayout
+                           // get a reference to the parent LinearLayout
+                           // get a reference to the parent LinearLayout
+                           // get a reference to the parent LinearLayout
+                           // get a reference to the parent LinearLayout
+                           val parentLayout = view.findViewById<LinearLayout>(R.id.whole)
+
+// remove all the child views from the parent LinearLayout
+                           parentLayout.removeAllViews()
+
+// create a new TextView for the message and set its text, background color, text color, and padding
+                           val messageTextView = TextView(context)
+                           messageTextView.text = "Prescription Successful"
+                           messageTextView.setBackgroundColor(Color.rgb(151, 203, 153)) // light green
+                           messageTextView.setTextColor(Color.WHITE) // white text
+                           messageTextView.setPadding(32, 32, 32, 32)
+                           messageTextView.textSize = 32f // set font size to 32sp
+                           messageTextView.setTypeface(null, Typeface.BOLD) // set bold font
+
+// create a new LinearLayout to hold the prescription number TextViews
+                           val prescriptionNumberLayout = LinearLayout(context)
+                           prescriptionNumberLayout.orientation = LinearLayout.VERTICAL // set orientation to vertical
+
+// create a new TextView for the prescription number label and set its text, text color, and font size
+                           val prescriptionNumberLabelTextView = TextView(context)
+                           prescriptionNumberLabelTextView.text = "Prescription number:"
+                           prescriptionNumberLabelTextView.setTextColor(Color.rgb(39, 71, 123)) // dark blue text
+                           prescriptionNumberLabelTextView.textSize = 24f // set font size to 24sp
+
+// create a new TextView for the prescription number value and set its text, text color, and font size
+                           val prescriptionNumberValueTextView = TextView(context)
+                           prescriptionNumberValueTextView.text = rec.toString()
+                           prescriptionNumberValueTextView.setTextColor(Color.rgb(39, 71, 123)) // dark blue text
+                           prescriptionNumberValueTextView.textSize = 48f // set font size to 48sp
+                           prescriptionNumberValueTextView.setTypeface(null, Typeface.BOLD) // set bold font
+
+// add the prescription number label and value TextViews as child views of the prescription number LinearLayout
+                           prescriptionNumberLayout.addView(prescriptionNumberLabelTextView)
+                           prescriptionNumberLayout.addView(prescriptionNumberValueTextView)
+
+// add the message and prescription number LinearLayouts as child views of the parent LinearLayout
+                           parentLayout.addView(messageTextView)
+                           parentLayout.addView(prescriptionNumberLayout)
+
+
+
+
+
+
+
+
+
+
+                           val builder = context?.let { it1 -> AlertDialog.Builder(it1) }
+                           builder?.setTitle("Prescription Successful")
+                           builder?.setMessage("The Prescription number is $rec")
+                           builder?.setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                           val dialog = builder?.create()
+
+                           dialog?.show()
+
+
+
+
+                       };
+                    }
+
+                }
+
+            })
 
 
 

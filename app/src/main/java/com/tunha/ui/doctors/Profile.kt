@@ -17,6 +17,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.tunha.Doctor
 import com.tunha.R
 import com.tunha.Session
 import com.tunha.User
@@ -68,7 +69,7 @@ class Profile : Fragment() {
         if (userid != null) {
             User.fetchUserByIdFromDatabase(userid ){user->
                 if(user!=null) {
-                    myuser=user
+                    myuser=user as Doctor
                     firstNameTextView.text = user.getFullName()
                     emailTextView.text = user.getEmail()
                     context?.let { user.getProfileImage(it,dpImageView) }
