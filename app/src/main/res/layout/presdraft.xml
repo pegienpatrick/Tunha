@@ -5,9 +5,10 @@
     android:background="#FDFBFB"
     android:gravity="center"
     android:orientation="vertical"
+    android:id="@+id/all"
     >
 
-        <LinearLayout
+    <LinearLayout
         android:id="@+id/indi1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,8 +73,8 @@
                     android:gravity="center"
                     android:hint="dosage"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnamedosage1"
@@ -88,7 +89,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" X " />
 
@@ -99,8 +100,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="timesa day"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugtimes1"
@@ -123,7 +124,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text="Total" />
 
@@ -131,7 +132,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" : " />
 
@@ -142,8 +143,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="Total number"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnametotalnumber1"
@@ -164,7 +165,7 @@ android:paddingBottom="10dp"
     </LinearLayout>
 
 
-        <LinearLayout
+    <LinearLayout
         android:id="@+id/indi2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -229,8 +230,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="dosage"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnamedosage2"
@@ -245,7 +246,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" X " />
 
@@ -256,8 +257,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="timesa day"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugtimes2"
@@ -280,7 +281,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text="Total" />
 
@@ -288,7 +289,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" : " />
 
@@ -299,8 +300,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="Total number"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnametotalnumber2"
@@ -321,7 +322,7 @@ android:paddingBottom="10dp"
     </LinearLayout>
 
 
-        <LinearLayout
+    <LinearLayout
         android:id="@+id/indi3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -386,8 +387,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="dosage"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnamedosage3"
@@ -402,7 +403,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" X " />
 
@@ -413,8 +414,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="timesa day"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugtimes3"
@@ -437,7 +438,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text="Total" />
 
@@ -445,7 +446,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" : " />
 
@@ -456,8 +457,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="Total number"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnametotalnumber3"
@@ -478,7 +479,7 @@ android:paddingBottom="10dp"
     </LinearLayout>
 
 
-        <LinearLayout
+    <LinearLayout
         android:id="@+id/indi4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -543,8 +544,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="dosage"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnamedosage4"
@@ -559,7 +560,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" X " />
 
@@ -570,8 +571,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="timesa day"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugtimes4"
@@ -594,7 +595,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text="Total" />
 
@@ -602,7 +603,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" : " />
 
@@ -613,8 +614,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="Total number"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnametotalnumber4"
@@ -635,7 +636,7 @@ android:paddingBottom="10dp"
     </LinearLayout>
 
 
-        <LinearLayout
+    <LinearLayout
         android:id="@+id/indi5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -700,8 +701,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="dosage"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnamedosage5"
@@ -716,7 +717,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" X " />
 
@@ -727,8 +728,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="timesa day"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugtimes5"
@@ -751,7 +752,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text="Total" />
 
@@ -759,7 +760,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" : " />
 
@@ -770,8 +771,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="Total number"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnametotalnumber5"
@@ -792,7 +793,7 @@ android:paddingBottom="10dp"
     </LinearLayout>
 
 
-        <LinearLayout
+    <LinearLayout
         android:id="@+id/indi6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -857,8 +858,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="dosage"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnamedosage6"
@@ -873,7 +874,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" X " />
 
@@ -884,8 +885,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="timesa day"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugtimes6"
@@ -908,7 +909,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text="Total" />
 
@@ -916,7 +917,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" : " />
 
@@ -927,8 +928,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="Total number"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnametotalnumber6"
@@ -949,7 +950,7 @@ android:paddingBottom="10dp"
     </LinearLayout>
 
 
-        <LinearLayout
+    <LinearLayout
         android:id="@+id/indi7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -1014,8 +1015,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="dosage"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnamedosage7"
@@ -1030,7 +1031,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" X " />
 
@@ -1041,8 +1042,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="timesa day"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugtimes7"
@@ -1065,7 +1066,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text="Total" />
 
@@ -1073,7 +1074,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" : " />
 
@@ -1084,8 +1085,8 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="Total number"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drugnametotalnumber7"
@@ -1106,6 +1107,6 @@ android:paddingBottom="10dp"
     </LinearLayout>
 
 
-    
+
 
 </LinearLayout>

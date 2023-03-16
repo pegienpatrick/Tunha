@@ -67,9 +67,27 @@ class doctorAddPrescription : Fragment() {
         val parent=view.findViewById<LinearLayout>(R.id.holdData)
         val inflater = LayoutInflater.from(context)
         val presdraftLayout = inflater.inflate(R.layout.presdraft, parent, false)
-        val indi=presdraftLayout.findViewById<LinearLayout>(R.id.indi)
-        val cindi= cloneLinearLayout(indi)
-        parent.addView(cindi)
+
+        val lin=presdraftLayout.findViewById<LinearLayout>(R.id.all)
+
+        val indiList: Array<LinearLayout> = arrayOf<LinearLayout>(
+            presdraftLayout.findViewById(R.id.indi1),
+            presdraftLayout.findViewById(R.id.indi2),
+            presdraftLayout.findViewById(R.id.indi3),
+            presdraftLayout.findViewById(R.id.indi4),
+            presdraftLayout.findViewById(R.id.indi5),
+            presdraftLayout.findViewById(R.id.indi6),
+            presdraftLayout.findViewById(R.id.indi7)
+        )
+
+       lin.removeAllViews()
+
+
+
+
+
+
+
 
         //parent.addView(R.layout.presdraft)
     //     val fieldsDrugname=listOf<TextView>()
