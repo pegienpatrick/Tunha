@@ -117,7 +117,7 @@ class Profile : Fragment() {
             val bitmap = BitmapFactory.decodeStream(inputStream)
 
             context?.let { myuser?.setProfileImage(it,bitmap) }
-            //myview?.let { feedData(it) }
+            //myview?.let { feedData(it) }// kabissaa
             Handler().postDelayed({
                 myview?.let { view ->
                     feedData(view)
