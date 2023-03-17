@@ -7,6 +7,7 @@ import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.os.Handler
 import android.provider.OpenableColumns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -30,6 +31,7 @@ class Profile : Fragment() {
 
     private lateinit var viewModel: ProfileViewModel
     private var myuser:User?=null
+    private var myview:View?=null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,6 +57,7 @@ class Profile : Fragment() {
     private val PICK_IMAGE_REQUEST = 1
     private val PERMISSION_REQUEST_CODE = 123
     fun feedData(rootView:View){
+        myview=rootView
         val dpImageView: ImageView = rootView.findViewById(R.id.dp)
         val firstNameTextView: TextView = rootView.findViewById(R.id.fname)
         val emailTextView: TextView = rootView.findViewById(R.id.email)
@@ -73,7 +76,7 @@ class Profile : Fragment() {
                     firstNameTextView.text = user.getFullName()
                     emailTextView.text = user.getEmail()
                     context?.let { user.getProfileImage(it,dpImageView) }
-                    feedData(rootView)
+                    //feedData(rootView)
 
                     changeProfilePictureButton.setOnClickListener(View.OnClickListener {
                         val permission = android.Manifest.permission.READ_EXTERNAL_STORAGE
@@ -114,7 +117,12 @@ class Profile : Fragment() {
             val bitmap = BitmapFactory.decodeStream(inputStream)
 
             context?.let { myuser?.setProfileImage(it,bitmap) }
-
+            //myview?.let { feedData(it) }
+            Handler().postDelayed({
+                myview?.let { view ->
+                    feedData(view)
+                }
+            }, 3000)
             // do something with the Bitmap, such as displaying it in an ImageView
         }
     }

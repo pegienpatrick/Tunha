@@ -5,6 +5,7 @@ import android.util.Log
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import java.util.*
 
 
 class Prescription(
@@ -16,12 +17,23 @@ class Prescription(
     private var drugs: MutableList<DrugPrescription> = mutableListOf()
     private var uniqueId: Int? = null
     private var fulfilledBy=""
+    private var whendone= Date()
+
     constructor(): this("", "", "", 0)
 
 //    init {
 //        if (uniqueId == null) {
 //            uniqueId = generateUniqueId()
 //        }
+//    }
+
+    public fun getTime():Date
+    {
+        return whendone;
+    }
+
+//    public fun getName():String{
+//        return name
 //    }
 
     public fun generateUniqueId(task: (Int?) -> Unit): Int {
@@ -85,6 +97,56 @@ class Prescription(
 
     fun setFulfilledBy(fulfilledBy: String) {
         this.fulfilledBy = fulfilledBy
+    }
+
+
+    companion object {
+        @JvmStatic // Optional annotation to make the function callable from Java code
+        fun fetchPrescriptionsFromDatabase(task: (List<Prescription>) -> Unit) {
+            val database = Firebase.database
+            val databaseRef: DatabaseReference = database.getReference("prescriptions")
+            databaseRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val PrescriptionList = mutableListOf<Prescription>()
+                    for (PrescriptionSnapshot in dataSnapshot.children) {
+                        var us: Prescription? = PrescriptionSnapshot.getValue(Prescription::class.java)
+                        if (us != null) {
+                            Log.d(TAG,"list gotten"+PrescriptionSnapshot)
+                            PrescriptionList.add(us)
+                        }
+                    }
+                    task(PrescriptionList)
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Handle database error
+                }
+            })
+        }
+
+
+        fun fetchPrescriptionByIdFromDatabase(PrescriptionId: String, task: (Prescription?) -> Unit) {
+            val database = Firebase.database
+            val databaseRef: DatabaseReference = database.getReference("prescriptions").child(PrescriptionId)
+            databaseRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val prescription: Prescription? = dataSnapshot.getValue(Prescription::class.java)
+                    if (prescription != null) {
+                       
+                        task(prescription)
+                    } else {
+                        task(null)
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Handle database error
+                    task(null)
+                }
+            })
+        }
+
+
     }
 
 

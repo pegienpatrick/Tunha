@@ -14,6 +14,8 @@ import android.widget.Toast
 import androidx.transition.TransitionManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.CustomTarget
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
@@ -25,7 +27,8 @@ import java.security.NoSuchAlgorithmException
 import java.util.*
 
 import com.bumptech.glide.request.transition.Transition as GlideTransition
-
+import com.bumptech.glide.request.target.Target
+import javax.sql.DataSource
 
 
 open class User {
@@ -190,6 +193,48 @@ open class User {
         }
     }
 
+    // fun getProfileImage(context: Context, imageView: ImageView) {
+    //     val storageRef = FirebaseStorage.getInstance().reference
+    //     val imagesRef = storageRef.child("profileImages/user${this.getId()}.jpg")
+    //     imagesRef.downloadUrl.addOnSuccessListener { uri ->
+    //         if (context is Activity && !context.isFinishing) {
+    //             Glide.with(context)
+    //                 .load(uri)
+    //                 .diskCacheStrategy(DiskCacheStrategy.ALL)
+    //                 .into(object : CustomTarget<Drawable>() {
+    //                     override fun onResourceReady(
+    //                         resource: Drawable,
+    //                         glideTransition: GlideTransition<in Drawable>?
+    //                     ) {
+    //                         if (context is Activity && !context.isFinishing) {
+    //                             imageView.setImageDrawable(resource)
+    //                             TransitionManager.beginDelayedTransition(imageView.parent as ViewGroup)
+    //                         }
+    //                     }
+
+    //                     override fun onLoadCleared(placeholder: Drawable?) {
+    //                         // do nothing
+    //                     }
+    //                 })
+    //         }
+    //     }.addOnFailureListener {
+    //         // if the user's profile image doesn't exist, load the default image from Firebase Storage
+    //         val defaultImageRef = storageRef.child("defaultprofile.jpg")
+    //         defaultImageRef.downloadUrl.addOnSuccessListener { uri ->
+    //             if (context is Activity && !context.isFinishing) {
+    //                 Glide.with(context)
+    //                     .load(uri)
+    //                     .diskCacheStrategy(DiskCacheStrategy.ALL)
+    //                     .into(imageView)
+    //             }
+    //         }.addOnFailureListener {
+    //             Toast.makeText(context, "Failed to get image", Toast.LENGTH_SHORT).show()
+    //         }
+    //     }
+    // }
+
+
+
 
     companion object {
         @JvmStatic // Optional annotation to make the function callable from Java code
@@ -219,10 +264,15 @@ open class User {
         fun fetchUserByIdFromDatabase(userId: String, task: (User?) -> Unit) {
             val database = Firebase.database
             val databaseRef: DatabaseReference = database.getReference("users").child(userId)
+
+            // Get the name of the calling method
+            val methodName = Thread.currentThread().stackTrace[3].methodName
+
             databaseRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val user: User? = dataSnapshot.getValue(User::class.java)
                     if (user != null) {
+                        Log.d(TAG, "Fetching user once from $methodName")
                         val userType = user.getUserType()
                         when (userType) {
                             "Admin" -> {
@@ -253,6 +303,9 @@ open class User {
                 }
             })
         }
+
+
+
 
 
     }

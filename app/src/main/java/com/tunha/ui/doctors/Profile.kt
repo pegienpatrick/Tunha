@@ -4,9 +4,11 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
+import android.nfc.Tag
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.provider.OpenableColumns
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +23,7 @@ import com.tunha.Doctor
 import com.tunha.R
 import com.tunha.Session
 import com.tunha.User
+import com.tunha.ui.admins.ProfileViewModel
 
 class Profile : Fragment() {
 
@@ -30,6 +33,7 @@ class Profile : Fragment() {
 
     private lateinit var viewModel: ProfileViewModel
     private var myuser:User?=null
+    private var myview:View?=null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,6 +59,7 @@ class Profile : Fragment() {
     private val PICK_IMAGE_REQUEST = 1
     private val PERMISSION_REQUEST_CODE = 123
     fun feedData(rootView:View){
+        myview=rootView
         val dpImageView: ImageView = rootView.findViewById(R.id.dp)
         val firstNameTextView: TextView = rootView.findViewById(R.id.fname)
         val emailTextView: TextView = rootView.findViewById(R.id.email)
@@ -69,11 +74,11 @@ class Profile : Fragment() {
         if (userid != null) {
             User.fetchUserByIdFromDatabase(userid ){user->
                 if(user!=null) {
-                    myuser=user as Doctor
+                    myuser=user
                     firstNameTextView.text = user.getFullName()
                     emailTextView.text = user.getEmail()
                     context?.let { user.getProfileImage(it,dpImageView) }
-                    feedData(rootView)
+                    //feedData(rootView)
 
                     changeProfilePictureButton.setOnClickListener(View.OnClickListener {
                         val permission = android.Manifest.permission.READ_EXTERNAL_STORAGE
@@ -114,6 +119,7 @@ class Profile : Fragment() {
             val bitmap = BitmapFactory.decodeStream(inputStream)
 
             context?.let { myuser?.setProfileImage(it,bitmap) }
+            myview?.let { feedData(it) }
 
             // do something with the Bitmap, such as displaying it in an ImageView
         }
