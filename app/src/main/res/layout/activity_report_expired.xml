@@ -14,20 +14,20 @@
 
         /> -->
     <!--        android:entries=""-->
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Source">
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Source">-->
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/source"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/source"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
 
-    </com.google.android.material.textfield.TextInputLayout>
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
 
-<Space
+    <Space
         android:layout_width="match_parent"
         android:layout_height="20dp" />
 
@@ -95,13 +95,14 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="20dp" />
+
     <Button
-        android:id = "@+id/sell"
+        android:id="@+id/sell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CONFIRM PURCHASE"
-        android:background="#3452BB"
-        android:textColor="#ffffff"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/red"
+        android:text="Confirm Reporting"
         >
 
     </Button>

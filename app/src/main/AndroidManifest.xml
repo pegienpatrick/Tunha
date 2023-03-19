@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Tunha"
         tools:targetApi="31">
         <activity
+            android:name=".ui.distributors.ReportExpired"
+            android:exported="false" />
+        <activity
             android:name=".ui.doctors.DoctorAccount"
             android:exported="false" />
         <activity

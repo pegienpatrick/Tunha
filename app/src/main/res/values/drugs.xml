@@ -1,5 +1,5 @@
 <resources>
-    <string-array name="menu_options">
+    <string-array name="drugs">
         <item>Amoxicillin</item>
         <item>Ciprofloxacin</item>
         <item>Doxycycline</item>

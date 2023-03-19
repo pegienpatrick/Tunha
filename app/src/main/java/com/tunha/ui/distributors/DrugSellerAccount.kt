@@ -29,6 +29,9 @@ class DrugSellerAccount : AppCompatActivity() {
 
 
 
+
+
+
         var ids:String= Session.getUserSession(this).first.toString()
         Log.d(TAG,"User was $ids")
 

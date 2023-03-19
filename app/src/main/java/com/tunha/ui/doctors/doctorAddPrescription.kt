@@ -2,15 +2,10 @@ package com.tunha.ui.doctors
 
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.graphics.Color
 import android.graphics.Color.*
 import android.graphics.Typeface
-import android.opengl.Visibility
 import android.os.Bundle
-import android.text.InputType
-import android.util.TypedValue
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,15 +13,7 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import com.tunha.*
-import java.util.Arrays.copyOf
-import java.util.Collections.copy
 
 
 class doctorAddPrescription : Fragment() {
