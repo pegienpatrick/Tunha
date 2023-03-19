@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Tunha"
         tools:targetApi="31">
         <activity
+            android:name=".ui.distributors.FulfilPrescription"
+            android:exported="false" />
+        <activity
+            android:name=".ui.distributors.DrugSellWholesale"
+            android:exported="false" />
+        <activity
             android:name=".ui.distributors.ReportExpired"
             android:exported="false" />
         <activity

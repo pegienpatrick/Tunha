@@ -2,6 +2,7 @@ package com.tunha.ui.distributors
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -70,7 +71,7 @@ class chemist_fulfil_prescription : Fragment() {
         var query = myRef.orderByChild("UniqueId")
 
 
-        query.addValueEventListener(object :
+        query.addListenerForSingleValueEvent(object :
             ValueEventListener {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -246,6 +247,18 @@ class chemist_fulfil_prescription : Fragment() {
 
             outerLayout.addView(thirdLinearLayout)
         }
+
+        outerLayout.setOnClickListener(View.OnClickListener {
+
+            if(prescription.getFulfilledBy().isEmpty()) {
+                var intent = Intent(activity, FulfilPrescription::class.java)
+                intent.putExtra("prescription", prescription.getUniqueId().toString())
+                startActivity(intent)
+            }
+            else
+                Toast.makeText(context,"Already Fulfilled",Toast.LENGTH_SHORT)
+
+        })
 
 
         return  outerLayout

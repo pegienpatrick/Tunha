@@ -1,79 +1,53 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-
-        />
-    <!--        android:entries=""-->
-
+    
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Spinner
-            android:id="@+id/choosePharmacy"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="16dp"
-            />
-        <Space
-            android:layout_height="match_parent"
-            android:layout_width="20dp" />
+        android:orientation="horizontal"
+        >
+
 
         <EditText
-            android:id="@+id/number2"
+            android:id="@+id/sach"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="number"
-            android:hint="Quantity"/>
+            android:hint="Search Business" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icons8_search_30"
+            android:id="@+id/dosearch"
+            android:padding="12dp"/>
 
     </LinearLayout>
 
-    <Space
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
-
-
-    <Button
-        android:id = "@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_borders"
-        android:textColor="#3452BB"
-        android:layout_gravity="center"
-        android:text="ADD"
-        >
-
-    </Button>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
-    <Button
-        android:id = "@+id/sell"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CONFIRM SALE"
-        android:background="#3452BB"
-        android:textColor="#ffffff"
-        >
-
-    </Button>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/holdData"
+            android:paddingBottom="60dp"
+            >
 
 
 
 
+        </LinearLayout>
+    </ScrollView>
 
 
 

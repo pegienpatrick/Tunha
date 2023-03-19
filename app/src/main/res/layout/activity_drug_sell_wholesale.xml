@@ -34,12 +34,12 @@
 
             <ImageView
                 android:id="@+id/dp"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
                 android:background="@drawable/rounded_corner_background"
+                android:padding="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/iconnny"
-                android:padding="0dp"
 
 
                 />
@@ -69,9 +69,8 @@
                 </TableRow>
                 <TableRow
                     android:gravity="center">
-                    <TextView
-                        android:text="License Number"
-                        />
+
+                    <TextView android:text="License Number  :     " />
                     <TextView
                         android:id="@+id/licence"
                         />
@@ -91,27 +90,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"/>
 
-            <ImageView
-
-                android:id="@+id/selLicense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/image_border"
-                android:padding="12dp"
-                android:scaleType="centerCrop"
-
-                android:src="@drawable/dummycertificate" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Medical Document"
-                >
-            </TextView>
-
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="70dp"/>
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -138,12 +116,12 @@
 
                             <TextView
                                 android:layout_weight="1"
-                                android:text="Available"
+                                android:text="Their Stock"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:layout_weight="1"
-                                android:text="Expired"
+                                android:text="To Sell"
                                 android:textStyle="bold" />
 
                         </TableRow>
@@ -156,6 +134,8 @@
                 </LinearLayout>
             </ScrollView>
 
+
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="70dp"/>
@@ -164,7 +144,7 @@
                 android:id="@+id/action_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="APPROVE Business"
+                android:text="Confirm Sale"
 
                 android:textColor="#ffffff"
                 />
