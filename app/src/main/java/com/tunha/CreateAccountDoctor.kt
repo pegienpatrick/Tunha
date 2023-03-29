@@ -109,10 +109,17 @@ class CreateAccountDoctor : AppCompatActivity() {
                         }
                     }
                     if (!error) {
+                        add.isEnabled=false
+                        Toast.makeText(applicationContext,"Creating account and Uploading Certificate",Toast.LENGTH_SHORT)
+
                         user.addToFirebase()
                         user.setCertImage(applicationContext, cert!!)
                         //finish()
                         saveUserSession(applicationContext,user.getId(),user.getUserType())
+
+
+                        Thread.sleep(3000)
+
                         var intent =
                                             Intent(applicationContext, DoctorAccount::class.java)
                                         startActivity(intent)

@@ -1,8 +1,10 @@
 package com.tunha
 
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
@@ -47,6 +49,8 @@ class DrugSeller(email: String, fullName: String, password: String, licenceNumbe
             }
         }.addOnFailureListener {
             Toast.makeText(context, "Failed to upload image", Toast.LENGTH_SHORT).show()
+            Log.d(TAG,"error : ")
+            it.printStackTrace()
         }
     }
 
@@ -74,6 +78,8 @@ class DrugSeller(email: String, fullName: String, password: String, licenceNumbe
             // if the user's profile image doesn't exist, load the default image from Firebase Storage
 
             Toast.makeText(context, "Failed to get image", Toast.LENGTH_SHORT).show()
+            Log.d(TAG,"error : ")
+            it.printStackTrace()
 
         }
     }
