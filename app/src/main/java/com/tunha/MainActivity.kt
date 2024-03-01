@@ -52,8 +52,8 @@ class MainActivity : AppCompatActivity() {
             // emailEditText.setText("pats@gmail.com")
             // passwordEditText.setText("123")
 
-            emailEditText.setText("patom@gmail.com")
-            passwordEditText.setText("123")
+//            emailEditText.setText("patd@gmail.com")
+//            passwordEditText.setText("123")
 
         }
 

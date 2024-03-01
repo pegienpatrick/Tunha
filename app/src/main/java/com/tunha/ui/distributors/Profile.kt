@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat
 import com.tunha.R
 import com.tunha.Session
 import com.tunha.User
+import com.tunha.ui.admins.ProfileViewModel
 
 class Profile : Fragment() {
 
@@ -29,6 +30,7 @@ class Profile : Fragment() {
 
     private lateinit var viewModel: ProfileViewModel
     private var myuser:User?=null
+    private var myview:View?=null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,6 +56,7 @@ class Profile : Fragment() {
     private val PICK_IMAGE_REQUEST = 1
     private val PERMISSION_REQUEST_CODE = 123
     fun feedData(rootView:View){
+        myview=rootView
         val dpImageView: ImageView = rootView.findViewById(R.id.dp)
         val firstNameTextView: TextView = rootView.findViewById(R.id.fname)
         val emailTextView: TextView = rootView.findViewById(R.id.email)
@@ -72,7 +75,7 @@ class Profile : Fragment() {
                     firstNameTextView.text = user.getFullName()
                     emailTextView.text = user.getEmail()
                     context?.let { user.getProfileImage(it,dpImageView) }
-                    feedData(rootView)
+                    //feedData(rootView)
 
                     changeProfilePictureButton.setOnClickListener(View.OnClickListener {
                         val permission = android.Manifest.permission.READ_EXTERNAL_STORAGE
@@ -113,6 +116,7 @@ class Profile : Fragment() {
             val bitmap = BitmapFactory.decodeStream(inputStream)
 
             context?.let { myuser?.setProfileImage(it,bitmap) }
+            myview?.let { feedData(it) }
 
             // do something with the Bitmap, such as displaying it in an ImageView
         }

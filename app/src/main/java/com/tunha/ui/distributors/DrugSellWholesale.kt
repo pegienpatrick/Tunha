@@ -1,36 +1,37 @@
-package com.tunha
+package com.tunha.ui.distributors
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
 import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
+import android.view.ViewGroup.LayoutParams.MATCH_PARENT
+import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.*
-import androidx.appcompat.app.AlertDialog
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.tunha.*
 
-class DrugSellerDetails : AppCompatActivity() {
+class DrugSellWholesale : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_drug_seller_details)
+        setContentView(R.layout.activity_drug_sell_wholesale)
+
         val backButton = findViewById<ImageView>(R.id.backbutton)
         backButton.setOnClickListener {
             finish()
         }
         var i=intent
-        if (i.hasExtra("userId")) {
-            var userid = i.getStringExtra("userId")
+        if (i.hasExtra("receiver")) {
+            var userid = i.getStringExtra("receiver")
 
             if (userid != null) {
                 feedData(userid)
-                feedStock(userid)
-
             }
         }
         else
@@ -54,13 +55,11 @@ class DrugSellerDetails : AppCompatActivity() {
         val emailTextView: TextView = findViewById(R.id.email)
         val licenseTextView: TextView = findViewById(R.id.licence)
         val statusTextView: TextView = findViewById(R.id.status)
-        val licenseImageView: ImageView = findViewById(R.id.selLicense)
-        val approveButton: Button = findViewById(R.id.action_button)
+     
 
         val paddingValue=20
         firstNameTextView.setPadding(paddingValue, paddingValue, paddingValue, paddingValue)
         emailTextView.setPadding(paddingValue, paddingValue, paddingValue, paddingValue)
-        licenseTextView.setPadding(paddingValue, paddingValue, paddingValue, paddingValue)
         statusTextView.setPadding(paddingValue, paddingValue, paddingValue, paddingValue)
 
         User.fetchUserByIdFromDatabase(userid) { res ->
@@ -73,39 +72,9 @@ class DrugSellerDetails : AppCompatActivity() {
                 statusTextView.text = if (user.isApproved()) "Approved" else "Not Approved"
 
                 user.getProfileImage(applicationContext, dImageView)
-                user.getLicenseImage(applicationContext, licenseImageView)
+                
 
-                if (user.isApproved()) {
-                    approveButton.text = ("DisApprove");
-                    approveButton.setBackgroundColor(Color.RED)
-                } else {
-                    approveButton.text = ("Approve");
-                    approveButton.setBackgroundColor(Color.BLUE)
-                }
-
-                approveButton.setOnClickListener(View.OnClickListener {
-
-                    val message = if (user.isApproved()) {
-                        "Are you sure you want to disapprove this Drug Seller ?"
-                    } else {
-                        "Are you sure you want to approve this Drug Seller?"
-                    }
-                    val alertDialogBuilder = AlertDialog.Builder(this)
-                    alertDialogBuilder.setTitle("Confirm")
-                    alertDialogBuilder.setMessage(message)
-                    alertDialogBuilder.setPositiveButton("Yes") { _, _ ->
-                        // Set user approval status to true
-                        user.setApproved(!user.isApproved())
-                        user.addToFirebase()
-                        feedData(userid)
-                    }
-                    alertDialogBuilder.setNegativeButton("No") { _, _ ->
-                        // Do nothing
-                    }
-                    val alertDialog = alertDialogBuilder.create()
-                    alertDialog.show()
-
-                })
+                
 
             }
 
@@ -113,21 +82,30 @@ class DrugSellerDetails : AppCompatActivity() {
         }
 
 
+        feedForm(userid)
+
+
     }
 
-
-    fun feedStock(ids:String)
+    fun feedForm(userid:String)
     {
+    	val ids= userid
         val table = findViewById<TableLayout>(R.id.table)
         val drugNames = resources.getStringArray(R.array.drugs)
 
+        
+
         val database = Firebase.database.getReference("stock")
+
+
+
+        val fields: MutableList<EditText> = mutableListOf()
 
         for (drugName in drugNames) {
             val row = TableRow(applicationContext)
             val layoutParams = LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
+                MATCH_PARENT,
+                WRAP_CONTENT
             )
             layoutParams.weight = 1.0f
             //row.layoutParams = layoutParams
@@ -162,11 +140,17 @@ class DrugSellerDetails : AppCompatActivity() {
                         availableView.layoutParams=lp
                         availableView.gravity= Gravity.CENTER
 
-                        val expiredView = TextView(applicationContext)
-                        expiredView.text = newStock.getExpiredNo().toString()
-                        row.addView(expiredView)
-                        expiredView.layoutParams=lp
-                        expiredView.gravity= Gravity.CENTER
+
+                        val ff = EditText(applicationContext)
+                        ff.inputType = InputType.TYPE_CLASS_NUMBER
+
+                        ff.layoutParams=lp
+
+                        row.addView(ff)
+                        fields.add(ff)
+
+
+
 
                     } else {
                         // If stock data exists, retrieve and display the values
@@ -174,13 +158,24 @@ class DrugSellerDetails : AppCompatActivity() {
                         availableView.text = stock.getAvailableNo().toString()
                         row.addView(availableView)
                         availableView.layoutParams=lp
-                        availableView.gravity= Gravity.CENTER
+                        availableView.gravity=Gravity.CENTER
 
-                        val expiredView = TextView(applicationContext)
-                        expiredView.text = stock.getExpiredNo().toString()
-                        row.addView(expiredView)
-                        expiredView.layoutParams=lp
-                        expiredView.gravity= Gravity.CENTER
+
+                        val ff = EditText(applicationContext)
+                        ff.inputType = InputType.TYPE_CLASS_NUMBER
+
+                        ff.layoutParams=lp
+
+                        row.addView(ff)
+                        fields.add(ff)
+
+                        if(stock.getAvailableNo()>=50)
+                        {
+                            ff.setBackgroundColor(Color.RED)
+                            ff.isEnabled=false
+                        }
+
+
                     }
                 }
 
@@ -191,5 +186,63 @@ class DrugSellerDetails : AppCompatActivity() {
 
             table.addView(row)
         }
+
+
+        val sell=findViewById<Button>(R.id.action_button)
+        sell.setOnClickListener(View.OnClickListener {
+            var from=Session.getUserSession(applicationContext).first.toString()
+            var to=userid
+            for(i in drugNames.indices)
+            {
+                var tty=0
+                try {
+                    tty = fields[i].text.toString().toInt()
+                    // Do something with the integer...
+                } catch (e: NumberFormatException) {
+                    // Handle the case where the input is not a valid integer
+                }
+                val tt=tty
+                if(tt>0)
+                {
+
+                    Stock.fetchStock(from+"_"+drugNames[i]){
+                        stock->
+                        if(stock!=null)
+                            if(tt<stock.getAvailableNo())
+                            {
+                                stock.setAvailableNo(stock.getAvailableNo()-tt)
+                                stock.addToDatabase()
+                                Stock.fetchStock(to+"_"+drugNames[i]){
+                                    st->
+                                    if(st!=null) {
+                                        st.setAvailableNo(st.getAvailableNo() + tt)
+                                        st.addToDatabase()
+                                    }
+                                    else
+                                    {
+                                        Stock(to+"_"+drugNames[i],tt,0).addToDatabase()
+
+                                    }
+
+                                }
+                                Toast.makeText(applicationContext,"Sale SuccessFul",Toast.LENGTH_SHORT)
+                            }
+
+
+                    }
+                }
+
+            }
+            finish()
+
+        })
+
+
+
+
     }
+
+
+
+
 }

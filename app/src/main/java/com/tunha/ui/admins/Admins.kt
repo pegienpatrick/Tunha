@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.text.Editable
 import android.util.Log
 import android.view.Gravity
 import androidx.fragment.app.Fragment

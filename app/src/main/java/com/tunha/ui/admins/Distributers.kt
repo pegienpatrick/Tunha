@@ -13,11 +13,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.LinearLayout
-import com.tunha.MainActivity
 import com.tunha.R
-import com.tunha.chemistDetails
 import android.widget.*
 import androidx.core.content.ContextCompat
 import com.google.firebase.database.DataSnapshot

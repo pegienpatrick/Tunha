@@ -2,13 +2,13 @@ package com.tunha
 
 class DrugPrescription {
     private var name: String = ""
-    private var dosage: String = ""
-    private var times: String = ""
+    private var dosage: Int = 0
+    private var times: Int=0
     private var total: Int = 0
 
     constructor()
 
-    constructor(name: String, dosage: String, times: String, total: Int) {
+    constructor(name: String, dosage: Int, times: Int, total: Int) {
         this.name = name
         this.dosage = dosage
         this.times = times
@@ -23,19 +23,19 @@ class DrugPrescription {
         this.name = name
     }
 
-    fun getDosage(): String {
+    fun getDosage(): Int {
         return dosage
     }
 
-    fun setDosage(dosage: String) {
+    fun setDosage(dosage: Int) {
         this.dosage = dosage
     }
 
-    fun getTimes(): String {
+    fun getTimes(): Int {
         return times
     }
 
-    fun setTimes(times: String) {
+    fun setTimes(times: Int) {
         this.times = times
     }
 

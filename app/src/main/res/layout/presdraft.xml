@@ -5,10 +5,11 @@
     android:background="#FDFBFB"
     android:gravity="center"
     android:orientation="vertical"
+    android:id="@+id/all"
     >
 
     <LinearLayout
-        android:id="@+id/indi"
+        android:id="@+id/indi1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ECF8F8"
@@ -48,11 +49,11 @@
                 <!--                                android:text="thedrugname "-->
                 <!--                                />-->
                 <Spinner
-                    android:id="@+id/drugname"
+                    android:id="@+id/drugname1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.8"
-                    android:entries="@array/menu_options"
+                    android:entries="@array/drugs"
                     android:gravity="center"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp" />
@@ -72,11 +73,11 @@
                     android:gravity="center"
                     android:hint="dosage"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/drugnamedosage"
+                        android:id="@+id/drugnamedosage1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#FBFAFA"
@@ -88,7 +89,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" X " />
 
@@ -99,11 +100,11 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="timesa day"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/drugtimes"
+                        android:id="@+id/drugtimes1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#FBFAFA"
@@ -123,7 +124,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text="Total" />
 
@@ -131,7 +132,7 @@ android:paddingBottom="10dp"
                     android:layout_weight="0.02"
                     android:gravity="center"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
+                    android:paddingBottom="10dp"
 
                     android:text=" : " />
 
@@ -142,11 +143,11 @@ android:paddingBottom="10dp"
                     android:gravity="center"
                     android:hint="Total number"
                     android:paddingTop="10dp"
-android:paddingBottom="10dp"
->
+                    android:paddingBottom="10dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/drugnametotalnumber"
+                        android:id="@+id/drugnametotalnumber1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#FBFAFA"
@@ -162,5 +163,950 @@ android:paddingBottom="10dp"
 
 
     </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/indi2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ECF8F8"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text="DrugName" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:text=" : "
+
+                    />
+                <!--                            <TextView-->
+                <!--                                android:text="thedrugname "-->
+                <!--                                />-->
+                <Spinner
+                    android:id="@+id/drugname2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:entries="@array/drugs"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="dosage"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugnamedosage2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text=" X " />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="timesa day"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugtimes2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text="Total" />
+
+                <TextView
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text=" : " />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="Total number"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugnametotalnumber2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/indi3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ECF8F8"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text="DrugName" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:text=" : "
+
+                    />
+                <!--                            <TextView-->
+                <!--                                android:text="thedrugname "-->
+                <!--                                />-->
+                <Spinner
+                    android:id="@+id/drugname3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:entries="@array/drugs"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="dosage"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugnamedosage3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text=" X " />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="timesa day"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugtimes3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text="Total" />
+
+                <TextView
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text=" : " />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="Total number"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugnametotalnumber3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/indi4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ECF8F8"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text="DrugName" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:text=" : "
+
+                    />
+                <!--                            <TextView-->
+                <!--                                android:text="thedrugname "-->
+                <!--                                />-->
+                <Spinner
+                    android:id="@+id/drugname4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:entries="@array/drugs"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="dosage"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugnamedosage4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text=" X " />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="timesa day"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugtimes4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text="Total" />
+
+                <TextView
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text=" : " />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="Total number"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugnametotalnumber4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/indi5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ECF8F8"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text="DrugName" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:text=" : "
+
+                    />
+                <!--                            <TextView-->
+                <!--                                android:text="thedrugname "-->
+                <!--                                />-->
+                <Spinner
+                    android:id="@+id/drugname5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:entries="@array/drugs"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="dosage"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugnamedosage5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text=" X " />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="timesa day"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugtimes5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text="Total" />
+
+                <TextView
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text=" : " />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="Total number"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugnametotalnumber5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/indi6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ECF8F8"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text="DrugName" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:text=" : "
+
+                    />
+                <!--                            <TextView-->
+                <!--                                android:text="thedrugname "-->
+                <!--                                />-->
+                <Spinner
+                    android:id="@+id/drugname6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:entries="@array/drugs"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="dosage"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugnamedosage6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text=" X " />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="timesa day"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugtimes6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text="Total" />
+
+                <TextView
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text=" : " />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="Total number"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugnametotalnumber6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/indi7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ECF8F8"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text="DrugName" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:text=" : "
+
+                    />
+                <!--                            <TextView-->
+                <!--                                android:text="thedrugname "-->
+                <!--                                />-->
+                <Spinner
+                    android:id="@+id/drugname7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:entries="@array/drugs"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="dosage"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugnamedosage7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text=" X " />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="timesa day"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugtimes7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text="Total" />
+
+                <TextView
+                    android:layout_weight="0.02"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:text=" : " />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="Total number"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/drugnametotalnumber7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFAFA"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+
 
 </LinearLayout>

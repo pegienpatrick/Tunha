@@ -116,10 +116,17 @@ class CreateAccountDistributor : AppCompatActivity() {
                         }
                     }
                     if (!error) {
+                        add.isEnabled=false
                         user.addToFirebase()
+                        Toast.makeText(applicationContext,"Creating account and Uploading License",Toast.LENGTH_SHORT)
                         user.setLicenseImage(applicationContext, license!!)
                         //finish()
+
                         saveUserSession(applicationContext,user.getId(),user.getUserType())
+
+
+                        Thread.sleep(3000)
+
                         var intent =
                                             Intent(applicationContext, DrugSellerAccount::class.java)
                                         startActivity(intent)

@@ -1,5 +1,6 @@
-<LinearLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
@@ -7,11 +8,12 @@
 
 
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
         >
 
         <EditText
@@ -20,7 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
 
-            android:hint="Search" />
+            android:hint="Prescription no or Patient Name"
+            tools:ignore="HardcodedText" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -31,67 +34,22 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FAFAFA"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="2"
+            android:id="@+id/holdData2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="vertical"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Amoxicillin"
-                android:textSize="24sp"
-                >
-
-            </TextView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="30 tabs"
-                android:textSize="24sp"
-                >
-
-            </TextView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="1*1"
-                android:textSize="24sp"
-                >
-
-            </TextView>
-
+            android:paddingBottom="60dp">
 
 
         </LinearLayout>
-
-
-        <Button
-            android:id="@+id/fulfil"
-            android:text="Fulfil"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:background="#3452BB"
-            android:textColor="#ffffff"
-            />/>
-
-    </LinearLayout>
-
-
-
+    </ScrollView>
 
 
 

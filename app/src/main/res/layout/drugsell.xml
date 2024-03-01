@@ -1,66 +1,31 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="20dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- <Spinner
+    <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
 
-        /> -->
+        />
     <!--        android:entries=""-->
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Source">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/source"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-<Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
-
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="bottom"
-        >
-
-
-        <com.google.android.material.textfield.TextInputLayout
+        android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/choosePharmacy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Select Drug"
-            android:padding="5dp"
-            app:prefixText="select Drug">
-
-            <Spinner
-                android:id="@+id/chooseDrug"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/drugs"
-                android:padding="16dp"
-
-
-                android:prompt="@string/selectdrug" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
+            android:padding="16dp"
+            />
         <Space
             android:layout_height="match_parent"
             android:layout_width="20dp" />
@@ -80,7 +45,7 @@
         android:layout_height="20dp" />
 
 
-    <!-- <Button
+    <Button
         android:id = "@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -90,7 +55,7 @@
         android:text="ADD"
         >
 
-    </Button> -->
+    </Button>
 
     <Space
         android:layout_width="match_parent"
@@ -99,7 +64,7 @@
         android:id = "@+id/sell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CONFIRM PURCHASE"
+        android:text="CONFIRM SALE"
         android:background="#3452BB"
         android:textColor="#ffffff"
         >
